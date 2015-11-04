@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\TicketsRemarksStatus" table="tickets_remarks_status">
+    <id name="rowId" type="integer" column="row_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ticketId" type="string" column="ticket_id" length="50" nullable="false"/>
+    <field name="enggId" type="integer" column="engg_id" nullable="false"/>
+    <field name="enggName" type="string" column="engg_name" length="50" nullable="false"/>
+    <field name="enggEmail" type="string" column="engg_email" length="50" nullable="false"/>
+    <field name="enggRemarks" type="text" column="engg_remarks" nullable="false"/>
+  </entity>
+</doctrine-mapping>

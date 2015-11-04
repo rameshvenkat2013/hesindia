@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://pvwebco.com/ticketing_systems/add_ticket.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Add Ticket | Ticketing Software</title>
+    
+    <!-- Styling -->
+    <!--<link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">-->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+
+<!-- MAIN PAGE CONTAINER -->
+<div class="boxed-container">
+
+{{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+
+<!-- MAIN TITLE -->
+<div class="main-title">
+    <div class="container">
+        <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">Add Ticket
+        </h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-3">
+
+            <div class="sidebar widget_nav_menu " style="margin-top: 23px;">
+                <ul class="menu" id="menu-services-menu">
+                    <li>
+                        <a href="{{ path('add_ticket') }}">TICKETS</a></li>
+                    <li>
+                        <a href="{{ path('add_ticket') }}">ENGINEERS</a></li>
+                    <li>
+                        <a href="{{ path('add_ticket') }}">REFERRALS</a></li>
+                </ul>
+            </div><!-- /.sidebar -->
+
+        </div><!-- /.col -->
+
+        <div class="col-xs-12 col-md-9">
+            <form style="margin-top: 22px;" action="{{ path('ticket_contents') }}" method="POST">
+                <div class="col-xs-12  col-md-6">
+                    <div class="form-group">
+                        <input type="text" placeholder="dd/mm/yyyy" id="datepicker" aria-invalid="false" aria-required="true" size="40" value="" name="date" required="" class="hasDatepicker">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Customer Name" aria-invalid="false" aria-required="true" size="40" value="" name="name" required="" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Type / Model No." aria-invalid="false" aria-required="true" size="40" value="" name="mobile" required="" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Inward DC No. &amp; Date" aria-invalid="false" aria-required="true" size="40" value="" name="inward" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Old Job No." aria-invalid="false" aria-required="true" size="40" value="" name="oldjob" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Outward DC No. &amp; Date" aria-invalid="false" aria-required="true" size="40" value="" name="outward" required="">
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" placeholder="Remarks" aria-invalid="false" aria-required="true" size="40" value="" name="remark" required=""></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                    <div class="form-group">
+                        <input type="text" placeholder="Material Description" aria-invalid="false" aria-required="true" size="40" value="" name="matdesc" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="KW / HP" aria-invalid="false" aria-required="true" size="40" value="" name="kwhp" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Serial No." aria-invalid="false" aria-required="true" size="40" value="" name="serialno" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Job No." aria-invalid="false" aria-required="true" size="40" value="" name="jobno" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Rework Yes/No" aria-invalid="false" aria-required="true" size="40" value="" name="rework" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Issue Reported" aria-invalid="false" aria-required="true" size="40" value="" name="reportedIssue" required="">
+                    </div>
+                    <div class="form-group ">
+                        <select aria-invalid="false" name="engineer" style="border: 1px solid #e1e1e1;">
+                            <option>---Select Engineer Name---</option>
+                            {% for data in engglist%}
+                            <option value="{{data.EnggId}}">{{data.EngineerName}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                    <input type="submit" style="margin-bottom: 10px;" class="btn btn-primary pull-left" value="Submit">
+                </div>
+            </form>
+        </div>
+
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+
+</div><!-- /.boxed-container -->
+
+		
+    <script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

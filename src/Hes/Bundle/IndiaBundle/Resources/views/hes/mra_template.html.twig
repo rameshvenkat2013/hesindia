@@ -1,0 +1,181 @@
+<style>
+       p
+       {
+           height: 12px;
+       }
+</style>
+
+<table cellpadding="7" cellspacing="0" width="800" border="1">
+    <tbody>
+        <tr>
+            <td colspan="7" valign="top" width="850">
+                <p align="center">
+                    <strong>Material Receipt Acknowledgement</strong>
+                </p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3" width="359">
+                <p>
+                    <strong>HITECH ELECTRONIC SERVICES</strong>
+                </p>
+                <p>
+                    <strong># 828, Ground Floor, 14</strong>
+                    <sup><strong>th</strong></sup>
+                    <strong> Main, 6</strong>
+                    <sup><strong>th</strong></sup>
+                    <strong> Cross,</strong>
+                </p>
+                <p>
+                    <strong>Gubbi Veeranna Road, Hanumantha Nagar </strong>
+                </p>
+                <p>
+                    <strong>Bengaluru-560019, Karnataka, India.</strong>
+                </p>
+                <p>
+                    <strong>Ph. No. : 080 26615975, Mob: +91 8553003025</strong>
+                </p>
+            </td>
+            <td colspan="2" width="375">
+                <p style="display:block">
+                    Service Tax No.: <strong>AAGFH4282BSD001</strong>
+                </p>
+                <p>
+                    VAT TIN No. : <strong>29540660964</strong>
+                </p>
+                <p>
+                    Email : <strong><a href="mailto:pmgowda@hesindia.net">pmgowda@hesindia.net</a></strong>
+                </p>
+                <p>
+                    Website : <strong><a href="http://www.hesindia.net">www.hesindia.net</a></strong>
+                </p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td colspan="3" height="41" width="359">
+                <p>
+                    <strong>To,</strong>
+                </p>
+                <p>
+                    <strong>{{custInfo.CompanyName}}</strong>
+                </p>
+                <p>
+                    <strong>{{custInfo.city}}</strong>
+                </p>
+            </td>
+            <td colspan="2" width="292">
+                <p>
+                    Our Job No. : <strong>{{job_no}}</strong>
+                </p>
+                <p>
+                    Date : <strong>{{ date|date('d/m/Y') }}</strong>
+                </p>
+                <p>
+                    Your RGP/DC No.: {{ inwarddc }}<strong></strong>
+                </p>
+                <p>
+                    Dated : {{ rgp_date|date('d/m/Y') }}<strong></strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" height="35" valign="top" width="665">
+                <p>
+                    <em><strong>Sir,</strong></em>
+                </p>
+                <p>
+                    <em><strong>We acknowledge the receipt of your material sent to us for repair, vide details as given below.</strong></em>
+                </p>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td width="30">
+                <p>
+                    <strong>S/N.</strong>
+                </p>
+            </td>
+            <td width="243">
+                <p>
+                    <strong>Material Description</strong>
+                </p>
+            </td>
+            {#
+            <td width="118">
+                <p>
+                    <strong>Model /Type No.</strong>
+                </p>
+            </td>
+            #}
+            <td width="60">
+                <p>
+                    <strong>Serial No.</strong>
+                </p>
+            </td>
+            <td width="28">
+                <p>
+                    <strong>Qty</strong>
+                </p>
+            </td>
+            <td width="224">
+                <p>
+                    <strong>Problem Reported</strong>
+                </p>
+            </td>
+        </tr>
+        {% for data in ticket %}
+        <tr valign="top">
+            <td width="30">
+                {{loop.index }}
+            </td>
+            <td width="243">
+                {{ data.mat_desc }}
+            </td>
+            {#
+            <td width="118">
+                {{ data.modelNo }}
+            </td>
+            #}
+            <td width="40">
+                {{ data.serialNo }}
+            </td>
+            <td width="28">
+                {{ 1 }}
+            </td>
+            <td width="224">
+                {{ data.reportedIssue }}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="7" valign="top" width="665">
+                <p>
+                    <strong>Important Notes:-</strong>
+                </p>
+                
+                <ol>
+                    <li>Office Timings: 9.30 AM to 6.15 PM in all working days, Lunch: 1.30 PM to 2.15 PM.</li>
+                    <li>Repair Status will be informed to you within 2 working days from the receipt of material.</li>
+                    <li>You are requested to collect the material within 30 days from the date of intimation.</li>
+                    <li>Delivery of the material will be strictly against this receipt.</li>
+                    <li>In all your communications please refer the <strong>Job No</strong> mentioned above.</li>
+                    <li>Minimum Testing, Troubleshooting &amp; Handling Charges is Rs.</li>
+                    <li>Payments to be made in the name of M/s. Hitech Electronic Services, payable at Bengaluru through DD/NEFT/RTGS.</li>
+                </ol>
+                <p style="margin-bottom:75px; margin-top: 10px;">
+                    <strong>Remarks:</strong>
+                </p>
+                <p style="margin-bottom:75px;">&nbsp;&nbsp;&nbsp;</p>
+                <p>
+                    Customer’s Sign
+                </p>
+                <p align="right">
+                    <strong>For HITECH ELECTRONIC SERVICES</strong>
+                </p>
+                <p style="margin-bottom:50px;">&nbsp;&nbsp;&nbsp;</p>
+                <p align="right" style="margin-right:60px;">
+                    <strong>Authorized Signature</strong>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>

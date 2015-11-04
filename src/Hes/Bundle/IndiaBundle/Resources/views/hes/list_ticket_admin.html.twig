@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://pvwebco.com/ticketing_systems/listing-tickets.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>List Admin Tickets | Ticketing Software</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+    
+    {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+	
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }
+
+.col-sm-4
+{
+    width: 25%;
+}
+</style></head>
+<body>
+	
+	<!-- MAIN PAGE CONTAINER -->
+	<div class="boxed-container">
+
+    {{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+		
+		<!-- MAIN TITLE -->
+		<div class="main-title">
+			<div class="container">
+                <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">Tickets
+                    {#
+                        <a target="_self" class="btn btn-info" id="button_requestQuotep" style="float: right; margin-left: 10px; padding-left: 15px; padding-right: 15px; letter-spacing: 0px;"><i class="fa fa-th-large"></i></a>
+                        <a href="#" class="btn btn-info" id="button_requestQuotet" style="float: right;margin-left: 10px;padding-left: 15px;padding-right: 15px;letter-spacing: 0px;"><i class="fa fa-table"></i></a>
+                    #}
+                    <a target="_self" href="{{ path('add_ticket') }}" class="btn btn-info" id="button_requestQuoted" style="float: right;letter-spacing: 0px;">Add New Ticket</a>
+                </h1>
+			</div>
+		</div><!-- /.main-title -->
+
+    {#
+    <div class="container">
+        <div class="col-md-3">
+            <input type="text" placeholder="Search Here" aria-invalid="false" aria-required="true" size="40" value="" name="subject" required="" style="border: 1px solid #e1e1e1;">
+        </div>
+        <div class="col-md-3">
+            <input type="text" placeholder="dd/mm/yyyy" id="datepicker" aria-invalid="false" aria-required="true" size="40" value="" name="subject" required="" style="border: 1px solid #e1e1e1;" class="hasDatepicker">
+        </div>
+
+        <div class="col-md-3">
+            <select aria-invalid="false" name="service" style="border: 1px solid #e1e1e1;">
+                <option value="Cargo">Status</option>
+                <option value="Ground Transport">Internet</option>
+                <option value="Logistic Service">News</option>
+                <option value="Storage">Email</option>
+            </select>
+        </div><div class="col-md-3">
+        <select aria-invalid="false" name="service" style="border: 1px solid #e1e1e1;">
+            <option value="Cargo">Engineer</option>
+            <option value="Ground Transport">Internet</option>
+            <option value="Logistic Service">News</option>
+        </select>
+    </div>
+    </div>
+#}
+
+		<div class="container">
+
+			<div class="row">
+
+				<main class="col-xs-12 col-md-9 col-md-push-3">
+
+                                        <span target="_self" class="btn btn-info" id="button_requestQuote1" style="margin-bottom: 10px; width : 100%;">Materials assigned to {{engg_name}}</span>
+                                            
+					<div class="row margin-bottom-30">
+
+                                            {% if tickets|length == 0 %}
+                                                {{ 'No Material list under this category' }}
+                                            {% elseif tickets|length <= 6 %}
+						{% for data in tickets %}
+                                            
+                                            <div class="col-sm-4 service_border">
+
+							<div class="page-box page-box--block">
+                                                            {%set ticketid = tickets[loop.index0].ticketId %}
+								<a href="{{ path('view_ticket', {'ticketId' : ticketid} ) }}" class="page-box__picture">
+									<img alt="Ground Transport" class="wp-post-image" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" srcset="{{ asset('bundles/hes/images/placeholders/360x240.png 360w, bundles/hes/images/placeholders/848x480.png 848w') }}" src="{{ asset('bundles/hes/images/placeholders/360x240.png') }}">
+								</a>
+								<div class="page-box__content">
+									<h5 class="page-box__title text-uppercase">
+										<a href="{{ path('view_ticket', {'ticketId' : ticketid} ) }}">{{tickets[loop.index0].reportedIssue}}</a>
+									</h5>
+                                    <p style="color: #444444;">{{tickets[loop.index0].jobNo ~ '/' ~ tickets[loop.index0].assignedTo ~ '/' ~ tickets[loop.index0].modelNo}}</p>
+                                    <p>{{tickets[loop.index0].remarks}}</p>
+                                    {#
+                                    <a target="_self" class="btn btn-info" id="button_requestQuote1">{{tickets[loop.index0].status}}</a>
+                                    <a target="_self" class="btn btn-info" id="button_requestQuotee" style="margin-left: 10px;padding-left: 15px;padding-right: 15px;"><i class="fa fa-eye"></i></a>
+                                    <a target="_self" class="btn btn-danger" id="button_requestQuotem" style="margin-left: 10px;padding-left: 15px;padding-right: 15px;"><i class="fa fa-trash"></i></a>#}
+									<!--<p>
+										<a class="read-more" href="ground_transport.html">Read more</a>
+									</p>-->
+								</div>
+							</div>
+							
+						</div><!-- /.col -->
+                                                
+						{% endfor%}
+                                            {% endif%}
+                                            
+						
+					</div><!-- /.row -->
+                                        
+                                        <a href="#">More Material List</a>
+                                        
+                                        <hr style="height:1px;border:none;color:#30a0b6;background-color:#30a0b6;" />
+                                        
+                                        
+				</main><!-- /.col -->
+                                {#
+                                <div class="col-xs-12 col-md-3 col-md-pull-9">
+                                        {{ render( controller('HESIndiaBundle:Default:sidebarLinks' ) ) }}
+                                </div><!-- /.col -->
+                                #}
+
+			</div><!-- /.row -->
+			
+		</div><!-- /.container -->
+		
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+                
+	</div><!-- /.boxed-container -->
+	
+<script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+    <script>
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

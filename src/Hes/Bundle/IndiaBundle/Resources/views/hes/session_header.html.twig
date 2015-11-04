@@ -1,0 +1,158 @@
+
+
+<!-- TOP BAR -->
+		<div class="top">
+			
+			<div class="container">
+ 
+				<div class="top__tagline">Welcome to Hitech Electronic Service</div>
+				
+				<nav class="top__menu">
+					<ul class="top-navigation js-dropdown">
+                        <li>
+							<a href="{{ path('faq') }}">FAQ's</a>
+						</li>
+						<li>
+							<a href="{{ path('terms') }}">Terms &amp; Conditions</a>
+						</li>
+                        <li>
+                            <a href="{{ path('privacy') }}">Privacy Policy</a>
+                        </li>
+					</ul> 
+				</nav>
+			
+			</div><!-- /.container -->
+		
+		</div><!-- /.top -->
+		
+		<!-- HEADER -->
+		<div class="header__container">
+			
+			<div class="container">
+				
+				<header class="header">
+					
+					<div class="header__logo" style="padding-top: 20px;">
+						<a href="{{ path('hes_welcome-page') }}">
+
+							<img class="img-responsive" srcset="{{ asset('bundles/hes/images/hes_new_logo.png, bundles/hes/images/hes_new_logo.png') }}" alt="HES_logo">
+						</a>
+						<button data-target="#cargopress-navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+							<span class="navbar-toggle__text">MENU</span>
+							<span class="navbar-toggle__icon-bar">
+								<span class="icon-bar">asdf</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</span>
+						</button>
+					</div><!-- /.header__logo -->
+					
+					<div class="header__navigation">
+						<nav class="collapse navbar-collapse" id="cargopress-navbar-collapse">
+							<ul class="main-navigation js-main-nav js-dropdown">
+								<li>
+									<a href="#">Materials</a>
+									<ul role="menu" class="sub-menu">
+                                                                            {% if userlevel == 0 or userlevel == 1 %}
+										<li><a href="{{ path('add_ticket' ) }}">Add Materials</a></li>
+										<li><a href="{{ path('search_ticket' ) }}">Search Materials</a></li>
+                                                                            {% endif %}
+										<li><a href="{{ path('list_ticket' ) }}">Listing Materials</a></li>
+                                                                            {% if userlevel == 0 or userlevel == 1 %}
+										<li><a href="{{ path('print_ticket' ) }}">Print Material Receipt</a></li>
+                                                                            {% endif %}
+									</ul>
+								</li>
+                                                                {% if userlevel == 0 or userlevel == 1 %}
+								<li>
+									<a href="#">Customers</a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="{{ path('add_customer' ) }}">Add Customers</a></li>
+										<li><a href="{{ path('list_customer' ) }}">Listing Customers</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Engineers</a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="{{ path('add_engineer' ) }}">Add Engineer</a></li>
+										<li><a href="{{ path('list_engineer' ) }}">Listing Engineer</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Referrals</a>
+									<ul role="menu" class="sub-menu">
+										<li><a href="{{ path('add_referrer' ) }}">Add Referrer</a></li>
+										<li><a href="{{ path('list_referrer' ) }}">Listing Referrer</a></li>
+									</ul>
+								</li>
+                                                                {% endif %}
+								<li>
+									<a href="#">Settings</a>
+									<ul role="menu" class="sub-menu">
+                                                                            {% if userlevel != 2 %}
+										<li><a href="{{ path('user_profile' ) }}">My Profile</a></li>
+                                                                            {% endif %}
+										<li><a href="{{ path('change_password' ) }}">Change Password</a></li>
+										<li><a style="color:red;" href="{{ path('log_out' ) }}">Logout</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div><!-- /.header__navigation -->
+					
+					<div class="header__widgets">
+						
+						<div class="widget-icon-box">
+
+                            <div class="icon-box">
+                                <h4 class="icon-box__title">Designation</h4>
+                                <span class="icon-box__subtitle">{{userInfo.Designation }}</span>
+                            </div>
+						
+						</div>
+					
+						<div class="widget-icon-box">
+
+                            <div class="icon-box">
+                                <h4 class="icon-box__title">Email</h4>
+                                <span class="icon-box__subtitle">{{ userInfo.EnggEmail }}</span>
+                            </div>
+
+                                                </div>
+
+						<div class="widget-icon-box">
+
+                            <div class="icon-box">
+                                <h4 class="icon-box__title">Welcome</h4>
+                                <span class="icon-box__subtitle">{{userInfo.EngineerName}}</span>
+                            </div>
+
+                                                </div>
+
+                        <nav class="main-nav">
+                            <ul>
+                                <!-- inser more links here -->
+                                <!--<li><a class="cd-signin" href="#0">Sign in</a></li>-->
+                                <li><a href="{{ path('log_out') }}" class="btn btn-info cd-signin" style="background-color: red; border-color:red;">LOGOUT</a></li>
+                            </ul>
+                        </nav>
+
+
+                        {#<a href="http://pvwebco.com/ticketing_systems/Signup-page.html" class="btn btn-info" id="button_requestQuotes" style="margin-left: 10px;">SIGN UP</a>#}
+				
+					</div><!-- /.header__widgets -->
+				
+					<div class="header__navigation-widgets">
+						<a target="_blank" href="https://www.facebook.com/" class="social-icons__link"><i class="fa fa-facebook"></i></a>
+						<a target="_blank" href="https://twitter.com/" class="social-icons__link"><i class="fa fa-twitter"></i></a>
+						<!--
+                                                <a target="_blank" href="https://plus.google.com/" class="social-icons__link"><i class="fa fa-google-plus"></i></a>
+						<a target="_blank" href="https://www.youtube.com/" class="social-icons__link"><i class="fa fa-youtube"></i></a>
+                                                -->
+					</div>
+			
+				</header>
+			
+			</div><!-- /.container -->
+		
+		</div><!-- /.header__container -->

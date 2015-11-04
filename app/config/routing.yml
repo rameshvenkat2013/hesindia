@@ -1,0 +1,7 @@
+hes_india:
+    resource: "@HESIndiaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

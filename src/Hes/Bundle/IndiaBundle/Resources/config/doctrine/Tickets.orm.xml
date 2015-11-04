@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\Tickets" table="tickets">
+    <unique-constraints>
+      <unique-constraint name="ticket_id" columns="ticket_id"/>
+      <unique-constraint name="job_no" columns="job_no"/>
+    </unique-constraints>
+    <id name="rowId" type="integer" column="row_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ticketId" type="string" column="ticket_id" length="20" nullable="false"/>
+    <field name="jobNo" type="string" column="job_no" length="50" nullable="false"/>
+    <field name="serialNo" type="string" column="serial_no" length="50" nullable="false"/>
+    <field name="oldJobNo" type="string" column="old_job_no" length="50" nullable="false"/>
+    <field name="inwardDc" type="bigint" column="inward_dc" nullable="false"/>
+    <field name="outwardDc" type="bigint" column="outward_dc" nullable="false"/>
+    <field name="reportedIssue" type="string" column="reported_issue" length="100" nullable="false"/>
+    <field name="modelNo" type="string" column="model_no" length="50" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="rgpDate" type="date" column="rgp_date" nullable="false"/>
+    <field name="customerId" type="string" column="customer_id" length="50" nullable="false"/>
+    <field name="materialDesc" type="string" column="material_desc" length="50" nullable="false"/>
+    <field name="kwHp" type="string" column="kw_hp" length="50" nullable="false"/>
+    <field name="rework" type="string" column="rework" length="20" nullable="false"/>
+    <field name="reportedStatus" type="string" column="reported_status" length="50" nullable="false"/>
+    <field name="assignedTo" type="integer" column="assigned_to" nullable="false"/>
+    <field name="ticketStatus" type="string" column="ticket_status" length="50" nullable="false"/>
+    <field name="remarks" type="string" column="remarks" length="50" nullable="false"/>
+  </entity>
+</doctrine-mapping>

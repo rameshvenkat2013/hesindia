@@ -1,0 +1,96 @@
+<div class="col-xs-12 col-md-3 col-md-pull-9">
+					
+					<div class="sidebar widget_nav_menu">
+						<ul class="menu" id="menu-services-menu">
+                                                      {% if link == 'DRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'DRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'DRS' }  ) }}">Drive Repairing Services</a>
+							</li>
+
+                                                      {% if link == 'IRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'IRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'IRS' }  )}}">Instrument Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'SSRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'SSRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'SSRS' }  )}}">Soft Start Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'CRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'CRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'CRS' }  )}}">Controller Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'TPRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'TPRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'TPRS' }  )}}">Teach Pendant Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'HMIRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'HMIRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'HMIRS' }  )}}">HMI Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'CNCRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'CNCRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'CNCRS' }  )}}">CNC Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'PSRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'PSRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'PSRS' }  )}}">Power Supply Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'BURS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'BURS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'BURS' }  )}}">Braking Unit Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'CBRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'CBRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'CBRS' }  )}}">Circuit Board Repairing Services</a>
+							</li>
+                                                        
+                                                      {% if link == 'PLCRS' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'PLCRS' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('services', { 'activelink' : 'PLCRS' }  )}}">PLC Repairing Services</a>
+							</li>
+                                                        
+						</ul>
+					</div><!-- /.sidebar -->
+
+				</div><!-- /.col -->

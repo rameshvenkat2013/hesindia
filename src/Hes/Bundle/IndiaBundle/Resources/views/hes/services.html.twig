@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://pvwebco.com/ticketing_systems/storage.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Storage &gt; Ground Transport | CargoPress</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+        <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+	
+	<!-- MAIN PAGE CONTAINER -->
+	<div class="boxed-container">
+		
+		{{ render( controller('HESIndiaBundle:Default:headerTemplate' ) ) }}
+		
+		<!-- MAIN TITLE -->
+		<div class="main-title">
+			<div class="container">
+				<h1 class="main-title__primary">Services</h1>
+			</div>
+		</div><!-- /.main-title -->
+		
+		<!-- BREADCRUMBS -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<span>
+					<a class="home" href="{{ path('hes_welcome-page') }}" title="Go to HomePage." rel="v:url">HOME</a>
+				</span>
+				<span>
+					Company Info
+				</span>
+				<span>
+					<span>Services</span>
+				</span>
+			</div>
+		</div><!-- /.breadcrumbs -->
+		
+		<div class="container">
+			
+			<div class="row">
+				
+				<main class="col-xs-12 col-md-9 col-md-push-3">
+					
+					<div class="row margin-bottom-30">
+						
+						<div class="col-sm-6" style="width:100%; text-align:justify">
+							
+							<p>
+								HITECH ELECTRONIC SERVICES (HES) was founded and established on 2011 by Qualified and highly Experienced Technocrats with vast experience of more than about 21 years in the Industrial Automation Products, Power Electronics, Telecommunication Products, and Instrumentation industry in Service and Repairs field.
+							</p>
+							
+							<p>
+								The very idea behind Establishing HES is the fact that in the manufacturing Industry every Machine has Electronics for say controlling operational functions, or for driving a motor or for protection of expensive heavy equipment or Machinery or for any automotive operations etc
+							</p>							
+							
+							
+							<p>
+								And these electronics when malfunction or fail, due to various reasons like Supply voltage fluctuations, Extreme operating conditions, like  hi Humid conditions or high temperature conditions or life of the components (ageing), etc.. and the amount of direct and indirect losses incurred in terms like Productivity is enormous.
+							</p>							
+							<p>
+								It is needless to mention here that almost all of the machinery are invariably Imported but with no service backup facility and with no documentary diagnostic help to repair (in most cases) and so it just becomes a very helpless situation.
+							</p>							
+							<p>
+								As known there is no established dedicated Agency or a professional repair setup available for the purpose, we felt our expertise experience may be better dedicated to fill this void to serve the manufacturing industry services thereby we will be contributing to industrial growth and as a result is the establishment of HES.
+							</p>							
+							
+						</div><!-- /.col -->
+						
+					</div><!-- /.row -->
+					
+				</main><!-- /.col -->
+				
+				{{ render( controller('HESIndiaBundle:Default:servicesidebarTemplate', { 'activelink' : activelink} ) ) }}
+				
+			</div><!-- /.row -->
+			
+		</div><!-- /.container -->
+		
+		{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+		
+	</div><!-- /.boxed-container -->
+		
+    <script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+</body></html>

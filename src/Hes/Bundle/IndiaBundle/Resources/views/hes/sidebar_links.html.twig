@@ -1,0 +1,47 @@
+<style>
+        li.sub-menu
+        {
+        }
+</style>
+
+                    <div class="sidebar widget_nav_menu">
+                        <nav id="navigation" class="site-navigation" role="navigation">
+                            <ul class="menu" id="menu-services-menu">
+                                <li class="current-menu-item menu-item"><a href="#">TICKETS</a>
+                                    <ul class="dropdown">
+                                        {% if userLevel == 0 %}
+                                        <li class="menu-item sub-menu"><a href="{{ path('add_ticket' ) }}"> &gt;&gt;Add Ticket</a></li>
+                                        <li class="menu-item sub-menu"><a href="{{ path('search_ticket' ) }}"> &gt;&gt;Search Ticket</a></li>
+                                        {% endif %}
+                                        <li class="menu-item sub-menu"><a href="{{ path('list_ticket' ) }}"> &gt;&gt;Listing Ticket</a></li>
+                                    </ul>
+                                </li>
+                                {% if userLevel == 0 %}
+                                <li class="current-menu-item menu-item"><a href="#">CUSTOMERS</a>
+                                    <ul class="dropdown">
+                                        <li class="menu-item sub-menu"><a href="{{ path('add_customer' ) }}"> &gt;&gt;Add Customers</a></li>
+                                        <li class="menu-item sub-menu"><a href="{{ path('list_customer' ) }}"> &gt;&gt;Listing Customers</a></li>
+                                    </ul>
+                                </li>
+                                <li class="current-menu-item menu-item"><a href="#">ENGINEERS</a>
+                                    <ul class="dropdown">
+                                        <li class="menu-item sub-menu"><a href="{{ path('add_engineer' ) }}"> &gt;&gt;Add Engineer</a></li>
+                                        <li class="menu-item sub-menu"><a href="{{ path('list_engineer' ) }}"> &gt;&gt;Listing Engineer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="current-menu-item menu-item"><a href="#">REFERRALS</a>
+                                    <ul class="dropdown">
+                                        <li class="menu-item sub-menu"><a href="{{ path('add_referrer' ) }}"> &gt;&gt;Add Referrals</a></li>
+                                        <li class="menu-item sub-menu"><a href="{{ path('list_referrer' ) }}"> &gt;&gt;Listing Referrals</a></li>
+                                    </ul>
+                                </li>
+                                {% endif %}
+                                <li class="current-menu-item menu-item"><a href="#">SETTINGS</a>
+                                    <ul class="dropdown">
+                                        <li class="menu-item sub-menu"><a href="{{ path('user_profile' ) }}"> &gt;&gt;My Profile</a></li>
+                                        <li class="menu-item sub-menu"><a href="{{ path('change_password' ) }}"> &gt;&gt;Change Password</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+					</div><!-- /.sidebar -->
