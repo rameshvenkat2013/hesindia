@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\TestingTable" table="testing_table">
+    <unique-constraints>
+      <unique-constraint name="row_id" columns="row_id"/>
+    </unique-constraints>
+    <id name="rowId" type="integer" column="row_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="place" type="string" column="place" length="50" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="time" type="time" column="time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

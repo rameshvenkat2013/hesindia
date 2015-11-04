@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://pvwebco.com/ticketing_systems/ -->
+<html lang="en" style="" class=" js flexbox no-touch js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+    
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ticketing Software | Hitech Electronic Services</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    
+    <style>
+        div.col-sm-6 p
+        {
+             text-align: justify;
+        }
+        
+        .col-sm-4 {
+            width: 33%;
+        }
+    </style>
+    
+        <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+        
+        {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+	{#<script>
+	/* Google Map Market Settings */
+	
+	var mapMarkers = [
+		{
+			"id": "1",
+			"title": "CargoPress",
+			"address": "Changi Airport, Singapore",
+			"custompinimage": "images\/pin.png"
+		}
+	]
+	</script>
+	
+        
+        
+        <script src="{{ asset('bundles/hes/js/common.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/util.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/stats.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/AuthenticationService.Authenticate') }}"></script>#}
+
+</head>
+<body>
+    
+                <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+                    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+                        <label style="font-size:20px; margin-left:10px">Sign In</label>
+                        <div> {# id="cd-login"> <!-- log in form -->#}
+                            {% if error %}
+                                <div>{{ error.message }}</div>
+                            {% endif %}
+                            <form class="cd-form" method="POST" action="{{ path('login_check') }}">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" name="_username" id="signin-email" type="text" placeholder="E-mail">
+
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-password" for="signin-password">Password</label>
+                                    <input class="full-width has-padding has-border" name="_password" id="signin-password" type="password" placeholder="Password">
+
+                                </p>
+
+                            {#
+                                    <a href="http://pvwebco.com/ticketing_systems/#0" class="hide-password">Hide</a>
+                                <p class="fieldset">
+                                    <input type="checkbox" id="remember-me" checked="">
+                                    <label for="remember-me">Remember me</label>
+                                </p>
+                            #}
+
+                                <p class="fieldset">
+                                    <input class="full-width" type="submit" value="Login">
+                                </p>
+                            </form>
+
+
+                        </div> <!-- cd-login -->
+
+                    </div> <!-- cd-user-modal-container -->
+                </div>
+	<!-- MAIN PAGE CONTAINER -->
+	<div class="boxed-container">
+
+                {% if email != 'nothing' %}
+                        {{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+                {% elseif email == 'nothing' %}
+                        {{ render( controller('HESIndiaBundle:Default:headerTemplate' ) ) }}
+                {% endif %}
+
+		<!-- JUMBOTRON -->
+		<div class="jumbotron jumbotron--with-captions">
+
+			<div data-interval="5000" data-ride="carousel" id="headerCarousel" class="carousel slide">
+ 
+				<div class="carousel-inner">
+
+                                        <div class="item active">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" 
+                                                     srcset="{{ asset('bundles/hes/images/placeholders/workdesk1.png 1920w, bundles/hes/images/placeholders/workdesk1.png 425w') }}" 
+                                                        src="{{ asset('bundles/hes/images/placeholders/workdesk1.png') }}">
+						{#
+                                                    <div class="container">
+							<div class="jumbotron-content">
+								<div class="jumbotron-content__title">
+									<h1 class="text-uppercase">It is a long established fact</h1>
+								</div>
+								<div class="jumbotron-content__description">
+									<p class="p1">
+										<span class="s1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</span>
+									</p>
+									<a target="_self" href="http://pvwebco.com/ticketing_systems/#" class="btn btn-primary">READ MORE</a>
+									<div class="w69b-screencastify-mouse"></div>
+								</div>
+							</div>
+						</div>
+                                                #}
+					</div><!-- /.item -->
+					
+					<div class="item">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" 
+                                                     srcset="{{ asset('bundles/hes/images/placeholders/workdesk2.png 1920w, bundles/hes/images/placeholders/workdesk2.png 425w') }}" 
+                                                        src="{{ asset('bundles/hes/images/placeholders/workdesk2.png') }}">
+						{#<div class="container">
+							<div class="jumbotron-content">
+								<div class="jumbotron-content__title">
+									<h1 class="text-uppercase">It is a long established fact</h1>
+								</div>
+								<div class="jumbotron-content__description">
+									<p class="p1">
+										<span class="s1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</span>
+									</p>
+									{#<a target="_self" href="http://pvwebco.com/ticketing_systems/#" class="btn btn-primary">READ MORE</a>}
+									<div class="w69b-screencastify-mouse"></div>
+								</div>
+							</div>
+						</div>
+                                                #}
+					</div><!-- /.item -->
+                                        
+                                        
+                                        <div class="item">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" 
+                                                     srcset="{{ asset('bundles/hes/images/placeholders/workdesk3.png 1920w, bundles/hes/images/placeholders/workdesk3.png 425w') }}" 
+                                                        src="{{ asset('bundles/hes/images/placeholders/workdesk3.png') }}">
+                                                {#<div class="container">
+							<div class="jumbotron-content">
+								<div class="jumbotron-content__title">
+									<h1 class="text-uppercase">It is a long established fact</h1>
+								</div>
+								<div class="jumbotron-content__description">
+									<p class="p1">
+										<span class="s1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</span>
+									</p>
+									<a target="_self" href="http://pvwebco.com/ticketing_systems/#" class="btn btn-primary">READ MORE</a>
+									<div class="w69b-screencastify-mouse"></div>
+								</div>
+							</div>
+						</div>#}
+					</div><!-- /.item -->
+                                        
+                                        <div class="item">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" 
+                                                     srcset="{{ asset('bundles/hes/images/placeholders/workdesk4.png 1920w, bundles/hes/images/placeholders/workdesk4.png 425w') }}" 
+                                                        src="{{ asset('bundles/hes/images/placeholders/workdesk4.png') }}">
+                                                {#<div class="container">
+							<div class="jumbotron-content">
+								<div class="jumbotron-content__title">
+									<h1 class="text-uppercase">It is a long established fact</h1>
+								</div>
+								<div class="jumbotron-content__description">
+									<p class="p1">
+										<span class="s1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</span>
+									</p>
+									<a target="_self" href="http://pvwebco.com/ticketing_systems/#" class="btn btn-primary">READ MORE</a>
+									<div class="w69b-screencastify-mouse"></div>
+								</div>
+							</div>
+						</div>#}
+					</div><!-- /.item -->
+                                        
+                                        
+
+				</div><!-- /.carousel-inner -->
+			
+				<div class="container" id="serviceslink">
+ 
+					<a data-slide="prev" role="button" href="https://pvwebco.com/ticketing_systems/#headerCarousel" class="left jumbotron__control">
+						<i class="fa  fa-caret-left"></i>
+					</a>
+					<a data-slide="next" role="button" href="https://pvwebco.com/ticketing_systems/#headerCarousel" class="right jumbotron__control">
+						<i class="fa  fa-caret-right"></i>
+					</a>
+				</div><!-- /.container -->
+				
+			</div><!-- /.carousel -->
+			
+		</div><!-- /.jumbotron -->
+		
+		<!-- OUR SERVICES -->
+		<div class="container" role="main">
+			
+			{#
+                            <div class="row jumbotron-overlap first">
+				
+				<div class="col-sm-3">
+					
+					<div class="featured-widget">
+					
+						<h3 class="widget-title">HELLO THERE AND WELCOME</h3>
+						
+						<p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos ae ab illo inventore veritatis
+						</p>
+						
+						<p>
+							<a class="read-more" href="http://pvwebco.com/ticketing_systems/#">MORE ABOUT US</a>
+						</p>
+					
+					</div>
+					
+				</div><!-- /.col -->
+				
+				<div class="col-sm-3">
+					
+					<a href="http://pvwebco.com/ticketing_systems/cargo.html">
+						<img alt="Cargo" class="post-image" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" srcset="images/placeholders/360x240.png 360w, images/placeholders/848x480.png 848w" src="./home_files/360x240.png">
+					</a>
+					
+					<h5 class="page-box__title"><a href="http://pvwebco.com/ticketing_systems/cargo.html">Product One</a></h5>
+					
+					<p>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti...
+					</p>
+					
+					<p>
+						<a class="read-more" href="http://pvwebco.com/ticketing_systems/#">Read more</a>
+					</p>
+					
+				</div><!-- /.col -->
+				
+				<div class="col-sm-3">
+					
+					<a href="http://pvwebco.com/ticketing_systems/logistic_service.html">
+						<img alt="Logistic Service" class="post-image" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" srcset="images/placeholders/360x240.png 360w, images/placeholders/848x480.png 848w" src="./home_files/360x240.png">
+					</a>
+					
+					<h5 class="page-box__title"><a href="http://pvwebco.com/ticketing_systems/logistic_service.html">Product Two</a></h5>
+					
+					<p>
+                        Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias "At vero eos et accusamus et iusto...
+					</p>
+					
+					<p>
+						<a class="read-more" href="http://pvwebco.com/ticketing_systems/#">Read more</a>
+					</p>
+				
+				</div><!-- /.col -->
+				
+				<div class="col-sm-3">
+					
+					<a href="http://pvwebco.com/ticketing_systems/storage.html">
+						<img alt="Storage" class="post-image" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" srcset="images/placeholders/360x240.png 360w, images/placeholders/848x480.png 848w" src="./home_files/360x240.png">
+					</a>
+					
+					<h5 class="page-box__title"><a href="http://pvwebco.com/ticketing_systems/storage.html">Product Three</a></h5>
+					
+					<p>
+                        Pvoluptatum deleniti At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis  Odio dignissimos ducimus qui blanditiis praesentium praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias "At vero eos et accusamus et iusto...
+					</p>
+					
+					<p>
+						<a class="read-more" href="http://pvwebco.com/ticketing_systems/#">Read more</a>
+					</p>
+					
+				</div><!-- /.col -->
+				
+			</div>
+                        #}
+                        <!-- /.row -->
+			
+			<div class="row">
+				
+				<div class="col-sm-12">
+					
+					<h3 class="widget-title big lined">
+						<span>OUR SERVICES</span>
+					</h3>
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+			
+			<div class="row">
+				
+				<div class="col-sm-4">
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'DRS' }) }}" class="icon-box">
+							{#<i class="fa fa-dropbox"></i>#}
+                            <h4 class="icon-box__title">Drive Repairing Services</h4>
+                            <span class="icon-box__subtitle">Sed ut perspiciatis unde omnis iste natus error sit.</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'CRS' }) }}" class="icon-box">
+							{#<i class="fa fa-archive"></i>#}
+                            <h4 class="icon-box__title">Controller Repairing Service</h4>
+                            <span class="icon-box__subtitle">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+				
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'CNCRS' }) }}" class="icon-box">
+							{#<i class="fa fa-truck"></i>#}
+                            <h4 class="icon-box__title">CNC Repairing Service</h4>
+                            <span class="icon-box__subtitle">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+
+                                        
+					<div class="widget widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'CBRS' }) }}" class="icon-box">
+							{#<i class="fa fa-home"></i>#}
+                            <h4 class="icon-box__title">Circuit Board Repairing Service</h4>
+                            <span class="icon-box__subtitle">Sed quia non numquam eius modi tempora incidunt ut labore</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+										
+				</div><!-- /.col -->
+
+                                <div class="col-sm-4">
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'IRS' }) }}" class="icon-box">
+							{#<i class="fa fa-globe"></i>#}
+                            <h4 class="icon-box__title">Instrument Repairing Service</h4>
+                            <span class="icon-box__subtitle">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'TPRS' }) }}" class="icon-box">
+							{#<i class="fa fa-road"></i>#}
+                            <h4 class="icon-box__title">Teach Pendant Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+				
+                            
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'PSRS' }) }}" class="icon-box">
+							{#<i class="fa fa-road"></i>#}
+                            <h4 class="icon-box__title">Power Supply Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'PLCRS' }) }}" class="icon-box">
+							{#<i class="fa fa-road"></i>#}
+                            <h4 class="icon-box__title">PLC Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                            </div><!-- /.col -->
+				
+				<div class="col-sm-4">
+				
+                                        
+                                    <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'SSRS' }) }}" class="icon-box">
+							{#<i class="fa fa-road"></i>#}
+                            <h4 class="icon-box__title">Soft Starter Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'HMIRS' }) }}" class="icon-box">
+							{#<i class="fa fa-road"></i>#}
+                            <h4 class="icon-box__title">HMI Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="{{ path('services', { 'activelink' : 'BURS' }) }}" class="icon-box">
+							{#<i class="fa fa-road"></i>#}
+                            <h4 class="icon-box__title">Braking Unit Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+			
+		</div><!-- /.conainer -->
+		
+                {#
+		<!-- CTA -->
+		<div class="cta">
+			
+			<div class="container">
+				
+				<div class="row">
+				
+					<div class="col-md-12">
+					
+						<div class="call-to-action">
+							<div class="call-to-action__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+							</div>
+							<div class="call-to-action__button">
+								<a target="_blank" href="http://pvwebco.com/ticketing_systems/#" class="btn btn-primary">SUBMIT YOUR TICKET</a>
+							</div>
+						</div><!-- /.call-to-action -->
+					
+					</div><!-- /.col -->
+				
+				</div><!-- /.row -->
+				
+			</div><!-- /.container -->
+			
+		</div><!-- /.cta -->
+		
+                #}
+		<!-- NEWS -->
+
+		
+		<!-- VALUES -->
+		<div class="values margin-bottom-60">
+			
+			<div class="container">
+				
+				<div class="col-sm-8 col-sm-offset-2">
+					
+					<h3>OUR CORE VALUES</h3>
+					<p class="text-center">
+                        Team of experts delivering the state-of-art electronic products servicing at a reasonable and fair price range with zero tolerance with the quality with 30-day warranty period.
+					</p>
+					<!--<p class="text-center">
+						<img alt="signature" src="images/signature.png">
+					</p>-->
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.container -->
+			
+		</div><!-- /.values -->
+		
+		<!-- ABOUT / QUICK QUITE / GALLERY / FAQ -->
+		<div class="container" id="aboutuslink">
+			
+			<div class="row margin-bottom-60">
+				
+				<div class="col-sm-6">
+					
+					<h3 class="widget-title big lined">
+						<span>ABOUT US</span>
+					</h3>
+					<p>
+                        HITECH ELECTRONIC SERVICES (HES) was founded and established on 2011 by Qualified and highly Experienced Technocrats with vast experience of more than about 21 years in the Industrial Automation Products, Power Electronics, Telecommunication Products, and Instrumentation industry in Service and Repairs field.
+
+
+					</p>
+					<p>
+                        The very idea behind Establishing HES is the fact that in the manufacturing Industry every Machine has Electronics for say controlling operational functions, or for driving a motor or for protection of expensive heavy equipment or Machinery or for any automotive operations etc
+					</p>
+                                        <p>
+                        And these electronics when malfunction or fail, due to various reasons like Supply voltage fluctuations, Extreme operating conditions, like  hi Humid conditions or high temperature conditions or life of the components (ageing), etc.. and the amount of direct and indirect losses incurred in terms like Productivity is enormous.
+                                        </p>
+					<p>
+						<a href="{{ path('about_us') }}" class="read-more">READ MORE ABOUT US</a>
+					</p>
+					
+				</div><!-- /.col -->
+				
+				<div class="col-sm-6" id="quickQuoteForm_wrapper">
+					
+					<div class="featured-widget">
+						
+						<h3 class="widget-title">
+                            CONTACT US
+						</h3>
+						
+						<p>
+						But i must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete count.
+						</p>
+						
+						<form>
+							<div style="display:none"><input type="text" name="maximus" value="" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;"></div>
+							<input type="hidden" name="subject" value="CargoPress: Quick Quote Request">
+							<div class="contact-form-small">
+                                <div class="row">
+                                    <div class="col-xs-12  col-md-6">
+                                        <div class="form-group"><!-- has-error-->
+                                            <input type="text" placeholder="First Name" aria-invalid="false" aria-required="true" size="40" value="" name="name" required="">
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="email" placeholder="Subject" aria-invalid="false" aria-required="true" size="40" value="" name="email" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12  col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Last Name" aria-invalid="false" aria-required="true" size="40" value="" name="subject" required="">
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="email" placeholder="E-mail address" aria-invalid="false" aria-required="true" size="40" value="" name="email" required="">
+                                        </div>
+                                    </div>
+                                        
+                                        <select aria-invalid="false" name="service">
+                                            <option value="Cargo">How you come to know</option>
+                                            <option value="Ground Transport">Internet</option>
+                                            <option value="Logistic Service">Friends</option>
+                                            <option value="Storage">News</option>
+                                        </select>
+                                        <div class="form-group">
+                                            <textarea placeholder="Message *" aria-invalid="false" rows="10" cols="40" name="message" required=""></textarea>
+                                        </div>
+                                    <div class="col-xs-12  col-md-12">
+                                        <input type="submit" class="btn btn-primary pull-right " value="SEND MESSAGE">
+                                        <img class="ajax-loader" id="loader" src="{{ asset('bundles/hes/images/ajax-loader.gif') }}" alt="Sending ..." style="display:none;">
+                                    </div>
+                                </div><!-- /.row -->
+								<div class="response success">Your message was sent; we'll be in touch shortly!</div>
+								<div class="response error">Unfortunately, we could not sent your message right now. Please try again.</div>
+							</div><!-- /.contact-form-small -->
+						</form>
+
+					</div><!-- /.featured-widget -->
+
+				</div><!-- /.col -->
+
+			</div><!-- /.row -->
+
+			<div class="row margin-bottom-60" id="imagegallerylink">
+
+				<div class="col-sm-6">
+
+					<div class="widget_black-studio-tinymce">
+
+						<h3 class="widget-title lined big">
+							<span>Image GALLERY</span>
+						</h3>
+
+						<div class="gallery gallery-columns-3 gallery-size-medium">
+							<figure class="gallery-item">
+								<a href="https://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="{{ asset('bundles/hes/images/elec_gallery/ABB-VFD_1.jpeg') }}">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="https://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="{{ asset('bundles/hes/images/elec_gallery/AC-Tech-Drive.jpeg') }}">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="https://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="{{ asset('bundles/hes/images/elec_gallery/Allen-Bradley-AC-Drive.jpeg') }}">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="https://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="{{ asset('bundles/hes/images/elec_gallery/Baumuller-drive.jpeg') }}">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="https://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="{{ asset('bundles/hes/images/elec_gallery/Bosch-Drive.jpeg') }}">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="https://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="{{ asset('bundles/hes/images/elec_gallery/Danaher-Motion-Drive.jpeg') }}">
+								</a>
+							</figure>
+						</div><!-- /.gallery -->
+						
+					</div><!-- /.widget_black-studio-tinymce -->
+
+				</div><!-- /.col -->
+
+				<div class="col-sm-6">
+						
+					<h3 class="widget-title lined big">
+						<span>Frequently Asked Questions</span>
+					</h3>
+                                                {% set i = 1 %}
+					<hr />
+                                                    {% for data in faq %}
+                                                    {% if i >3 %}
+                                                    {{ '' }}
+                                                    {% else %}
+                                            <h4>{{ 'Q. ' ~ data.question }}</h4>
+					<p style="font-size:17px;">
+						<b>{{ 'Ans: ' }} </b> {{ data.answer|raw }}
+					</p>
+                                        <hr />
+                                                    {% set i = i + 1 %}
+                                                    {% endif %}
+                                        
+                                                    {% endfor %}
+					<p>
+						<a href="{{ path('faq') }}" class="read-more">READ MORE FAQs</a>
+					</p>
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+			
+		</div><!-- /.container -->
+		
+		<!-- TESTIMONIALS -->
+		<div class="testimonials">
+			
+			<div class="container">
+				
+				<div class="row margin-bottom-60">
+				
+					<div class="col-sm-12">
+					
+						<div class="testimonial">
+							
+							<h3 class="widget-title lined big">
+								<span>TESTIMONIALS</span>
+							</h3>
+							
+							<div class="testimonial__carousel">
+								<a data-slide="prev" href="https://pvwebco.com/ticketing_systems/#testimonalCarousel" class="testimonial__carousel--left">
+									<i aria-hidden="true" class="fa fa-caret-left"></i>
+									<span role="button" class="sr-only">Next</span>
+								</a>
+								<a data-slide="next" href="https://pvwebco.com/ticketing_systems/#testimonalCarousel" class="testimonial__carousel--right">
+									<i aria-hidden="true" class="fa fa-caret-right"></i>
+									<span role="button" class="sr-only">Previous</span>
+								</a>
+							</div><!-- /.testimonial__carousel -->
+							
+							<div data-interval="false" data-ride="carousel" class="carousel slide" id="testimonalCarousel">
+ 
+								<div role="listbox" class="carousel-inner">
+										
+									<div class="item">
+										<div class="row">
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                                                                      Very Happy with the efficient service. Also, quite pleased with the reasonable quotation.      
+													</p>
+													<cite class="testimonial__author">
+                                                        Chandra Shekar<span class="testimonial__author-description">, Aditi Pharmaceuticals Pvt.Ltd</span>
+													</cite>
+												</blockquote>
+											</div>
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                        Thanks for saving us from a major issue, and also timely delivery of the product made our internal operation more productive.
+													</p>
+													<cite class="testimonial__author">
+                                                        Vasanth Kumar<span class="testimonial__author-description">, Tech CNC Solutions</span>
+													</cite>
+												</blockquote>
+											</div>
+										</div>
+									</div><!-- /.item -->
+										
+									<div class="item active">
+										<div class="row">
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                        Our first service was a pleasant experience. We would definitely wish to comeback again.
+													</p>
+													<cite class="testimonial__author">
+                                                        Shivu<span class="testimonial__author-description">, Eagle Fitness World</span>
+													</cite>
+												</blockquote>
+											</div>
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                        I was amazed with the service, looking at the complexity of the task given. Kudos Hesindia Technical Team
+													</p>
+													<cite class="testimonial__author">
+                                                        Rajshekar<span class="testimonial__author-description">, Tech CNC Solutions</span>
+													</cite>
+												</blockquote>
+											</div>
+										</div>
+									</div><!-- /.item -->
+										
+								</div><!-- /.carousel-inner -->
+									
+							</div><!-- /.carousel -->
+							
+						</div><!-- /.testimonial -->
+					
+					</div><!-- /.col -->
+				
+				</div><!-- /.row -->
+				
+			</div><!-- /.container -->
+			
+		</div><!-- /.testimonials -->
+		
+		<!-- MAP -->
+		{#<div class="map margin-bottom-60">#}
+						
+			<!--<div data-type="roadmap" data-zoom="7" data-markers='[{"id":"1","title":"CargoPress","address":"Kalmoesstraat 20, Apeldoorn","custompinimage":"images\/pin.png"}]' class="simple-map js-where-we-are"></div>
+					<iframe src="" margin-top:10px="" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>-->
+                    <div id="map" style="height:350px;"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1944.213126338!2d77.560023!3d12.944554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf96f77ce74c7bfab!2sHitech+Electronic+Services!5e0!3m2!1sen!2sus!4v1446575905050" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+		{#</div><!-- /.map -->#}
+		
+
+		
+		{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+		
+	</div><!-- /.boxed-container -->
+
+    {#
+        
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+<script type="text/javascript">
+    var locations = [
+      ['HITECH ELECTRONIC SERVICES <br/>#828,Ground Floor, 14th Main,<br/>Gubbi Veeranna Road(6th Cross),<br/>Hanumanthanagara, Bengaluru - 560 019', 12.9437122,77.560055, 3,'HITECH ELECTRONIC SERVICES']
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: new google.maps.LatLng(12.9437122,77.560055),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        title: locations[i][4]
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+#}        
+        <script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+       {# <script src="{{ asset('bundles/hes/js/main.js') }}"></script>#}
+        <script src="{{ asset('bundles/hes/js/SimpleMap.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/NumberCounter.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/jquery.magnific-popup.min.js') }}"></script>
+        {#<script src="{{ asset('bundles/hes/js/custom.js') }}"></script>#}
+       <script src="{{ asset('bundles/hes/js/jquery.min.js') }}"></script>
+        
+               <!-- Gem style -->
+        <script src="{{ asset('bundles/hes/js/modernizr.js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/jquery.min(1).js') }}"></script>
+        <script src="{{ asset('bundles/hes/js/main(1).js') }}"></script>
+        {#<script src="{{ asset('bundles/hes/js/main(2).js') }}"></script>#}
+<!-- Gem jQuery -->
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script>
+
+</body></html>

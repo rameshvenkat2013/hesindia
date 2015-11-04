@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://pvwebco.com/ticketing_systems/add_ticket.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Search Ticket | Ticketing Software</title>
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+    
+    {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+
+<!-- MAIN PAGE CONTAINER -->
+<div class="boxed-container">
+
+{{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+
+<!-- MAIN TITLE -->
+<div class="main-title">
+    <div class="container">
+        <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">Search Ticket
+        </h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        {#
+        <div class="col-xs-12 col-md-3">
+
+            {{ render( controller('HESIndiaBundle:Default:sidebarLinks' ) ) }}
+
+        </div><!-- /.col -->
+        #}
+
+        <div class="col-xs-12 col-md-9">
+            <form name="search_data" style="margin-top: 22px;" action="{{ path('search_ticket') }}" method="POST">
+                <fieldset style="border-color: #AAAAAA; margin: 25px; padding-top: 25px; ">
+                <div class="col-xs-12  col-md-6">
+                    <div class="form-group">
+                        <input type="text" placeholder="Material Job Id" id="datepicker" aria-invalid="false" aria-required="true" size="40" value="{{mat_id|default('')}}" 
+                                    name="mat_id">
+                    </div>
+                        {#<span>____________________OR______________________</span>#}
+                    <div class="form-group">
+                        <input type="text" placeholder="DC Number" id="datepicker" aria-invalid="false" aria-required="true" size="40" value="" 
+                                    name="dc_id">
+                    </div>
+                    <div class="form-group">
+                        
+                            <select name="cust_name">
+                                <option value="nothing">---Choose the Customer---</option>
+                        {% for data in customerInfo %}
+                                {% if cust_id == data.CompanyId %}
+                                    <option value="{{ data.CompanyId}}" selected>{{ data.CompanyName }}</option>
+                                {% else %}
+                                    <option value="{{ data.CompanyId}}">{{ data.CompanyName }}</option>
+                                {% endif %}
+                        {% endfor %}
+                            </select>
+                        
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                    <input type="submit" name="submit_search" style="margin-bottom: 10px;" class="btn btn-primary pull-left" value="Search the Ticket">
+                </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div>
+            
+            {% if not_found == 'true' %}
+                <span style="color:red;">{{ 'Sorry, There are no results based on the search criteria' }}
+            {% elseif found == 'true' %}
+                <br />
+                <br />
+                <br />
+                <hr />
+                    <table class="table" style="margin-left: 0px;">
+						<thead>
+						<tr>
+							<th colspan="4"></th>
+						</tr>
+						<tr>
+							<th colspan="4">{{ 'Ticket Details for the Material Id \'' }} <b>{{ mat_id }}</b> {{ '\' is as follows:' }}</th>
+						</tr>
+						<tr>
+							<th style="text-align:left; width:50px;">Material Receipt Date</th>
+							<th style="text-align:left; width:50px;">Customer Name</th>
+							<th style="text-align:left; width:50px;">Reported Issue</th>
+							<th style="text-align:left; width:50px;">Ticket Status</th>
+						</tr>
+						</thead>
+						<tbody>
+                                                 {% for ticketInfo in tickets %}
+                                                        
+						<tr>
+							<td>{{ticketInfo.date|date('d/m/Y')}}</td>
+                                                        <td>{{ render( controller('HESIndiaBundle:Default:getCustomerName' , { 'custId' : ticketInfo.customerId} ) ) }}</td>
+							<td><span>{{ ticketInfo.reportedIssue}}</span></td>
+                                                        <td>
+                                                                <span>
+                                                                        {{ ticketInfo.ticketStatus|capitalize}}
+                                                                        <a href="{{ path('view_ticket', { 'ticketId' : ticketInfo.ticketId}) }}">
+                                                                            {{ 'Click to View Ticket'}}
+                                                                        </a>
+                                                                </span>
+                                                        </td>
+						</tr>
+                                                {% endfor %}
+                                                <tr>
+							<td colspan="4"></td>
+						</tr>
+                                                </tbody>
+					</table>
+                
+            {% endif %}
+
+        </div>
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+
+</div><!-- /.boxed-container -->
+
+<script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

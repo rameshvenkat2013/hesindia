@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://pvwebco.com/ticketing_systems/view_tickets.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>View Tickets | Ticketing Software</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+    
+    {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+
+<!-- MAIN PAGE CONTAINER -->
+<div class="boxed-container">
+
+{{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+
+<!-- MAIN TITLE -->
+<div class="main-title">
+    <div class="container">
+        <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">View Ticket
+        </h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+{#
+        <div class="col-xs-12 col-md-3">
+
+            {{ render( controller('HESIndiaBundle:Default:sidebarLinks' ) ) }}
+
+        </div><!-- /.col -->
+#}
+        <div class="col-xs-12 col-md-9">
+            <div class="col-sm-6">
+                <div class="col-sm-6" style="margin-top: 20px;">
+                    <p>Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    {% if user_level == 0 or user_level == 1 %}
+                        <p>Customer Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    {% endif %}
+                    <p>Type / Model No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Problem Reported &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Inward DC No. &nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Old Job No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Outward DC No.:</p>
+                </div>
+                <div class="col-sm-6" style="margin-top: 20px;">
+                    <p>{{ ticket.date|date('d/m/Y') }}</p>
+                    {% if user_level == 0 or user_level == 1 %}
+                        <p>{{ customerName}}</p>
+                    {% endif %}
+                    <p>{{ ticket.modelNo}}</p>
+                    <p>{{ ticket.reportedIssue}}</p>
+                    <p>{{ ticket.inwardDc}}</p>
+                    <p>{{ ticket.oldJobNo}}</p>
+                    <p>{{ ticket.OutWardDc}}</p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-6" style="margin-top: 20px;">
+                    <p>Assigned To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Material Description &nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>KW / HP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Serial No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Job No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Rework Yes / No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                    <p>Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+                </div>
+                <div class="col-sm-6" style="margin-top: 20px;">
+                    <p><b>{{ enggInfo.EngineerName}}</b></p>
+                    <p>{{ ticket.materialDesc}}</p>
+                    <p>{{ ticket.kwHp}}</p>
+                    <p>{{ ticket.serialNo}}</p>
+                    <p>{{ ticket.jobNo}}</p>
+                    <p>{{ ticket.rework}}</p>
+                    <p><b>{{ ticket.reportedStatus}}</b></p>
+                </div>
+            </div>
+
+                {% if user_level == 0 %}
+                    {% if ticket.TicketStatus == 'Open' %}
+                        <a href="{{ path('close_ticket', {'ticketid' : ticket.ticketId})}}"><button>Close the Ticket</button></a>
+                    {% elseif ticket.TicketStatus == 'Closed' %}
+                        <a href="{{ path('open_ticket', {'ticketid' : ticket.ticketId})}}"><button>Open the Ticket</button></a>
+                    {% endif %}
+                {% endif %}
+
+            <div class="col-xs-12 col-md-12">
+                <h3 class="widget-title text-uppercase">Comments</h3>
+                <hr>
+                <p style="padding-left: 100px;">Title : {{ticket.reportedIssue}}</p>
+                <div class="col-md-2">
+                    <!--<img src="./view_tickets_files/no-profile-img.gif" alt="teja" style="width:60px;height:50px; margin-top: 25px;">-->
+                </div>
+                <div class="col-md-9" style="border: 1px solid #1f425d; margin-bottom: 10px;">
+                    <p>{{ticket.Remarks}}<br><b> Posted By : Prakash M Gowda</b></p>
+                </div>
+            </div>
+                
+                {% for data in ticketsremarks%}
+
+                <div class="col-xs-12 col-md-12">
+                    <p style="padding-left: 100px;">Title : {{ticket.reportedIssue}}</p>
+                {% if loop.index0 % 2 != 0 %}
+                    <div class="col-md-9" style="float:right; margin-right: 65px; border: 1px solid #1f425d; margin-bottom: 10px;">
+                {% else %}
+                    <div class="col-md-9" style="border: 1px solid #1f425d; margin-bottom: 10px;">
+                {% endif %}
+                        <p>{{data.EnggRemarks}}<br><b> Posted By : {{ data.EnggName}}</b></p>
+                    </div>
+                    <div class="col-md-2">
+                        <!--<img src="./view_tickets_files/no-profile-img.gif" alt="teja" style="width:60px;height:50px; margin-top: 25px;">-->
+                    </div>
+                </div>
+                {% endfor %}
+                    
+                {# if block_comment == 'true' and user_level == 2  #}
+                
+                {% if ticket.TicketStatus == 'closed' %}
+                <div class="col-xs-12 col-md-12">
+                    <textarea type="text" placeholder="Enter Your Comments" aria-invalid="false" aria-required="true" value="" name="remark" readonly></textarea>
+                </div>
+                {% else %}
+                
+           <form method="POST" action="{{ path('store_remarks') }}">
+                {% if user_level == 0 %}
+                    <select name="reassignto" class="reassign" style="width: 30%; height: 53px; margin: 15px;">
+                        <option>---Assign To---</option>
+                        <option value="4">Admin</option>
+                        {% for data in engg_list %}
+                            <option value="{{data.EnggId}}">{{data.EngineerName}}</option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+                    <select name="reportstatus" class="reportstatus" style="width: 30%; height: 53px; margin: 15px;">
+                        <option>---Report Staus---</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="repaired">Repaired</option>
+                            <option value="unrepaired">UnRepaired</option>
+                            <option value="unapproved">UnApproved</option>
+                            <option value="apprrequired">Approval Required</option>
+                            <option value="comprequired">Components Required</option>
+                    </select>
+                
+                
+               <input type="hidden" name="ticket_id" value="{{ticket.ticketId}}" />
+            <div class="col-xs-12 col-md-12">
+                <textarea type="text" placeholder="Enter Your Comments" aria-invalid="false" aria-required="true" value="" name="remark"></textarea>
+            </div>
+            <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                <input type="submit" style="margin-bottom: 10px;" class="btn btn-primary pull-left" value="Submit">
+                <a href="http://pvwebco.com/ticketing_systems/view_tickets.html#" class="btn btn-info" id="button_requestQuote0" style="margin-left: 10px; margin-top: -10px;">Back</a>
+            </div>
+        </form>
+                {% endif %}
+                    
+        </div>
+
+    </div><!-- /.row -->
+
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+
+</div><!-- /.boxed-container -->
+
+
+
+<script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script><script>
+
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+
+</body>
+</html>

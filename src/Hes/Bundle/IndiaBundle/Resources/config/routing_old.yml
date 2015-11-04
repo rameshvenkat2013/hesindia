@@ -1,0 +1,47 @@
+hes_india_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HESIndiaBundle:Default:index }
+hes_welcome-page:
+    path:     /homepage
+    defaults: { _controller: HESIndiaBundle:Default:homepage }
+login_check:
+    path:     /login_check
+    defaults: { _controller: HESIndiaBundle:Login:loginCheck }
+about_us:
+    path:     /about-us
+    defaults: { _controller: HESIndiaBundle:Default:aboutUs }
+faq:
+    path:     /frequently-asked-questions
+    defaults: { _controller: HESIndiaBundle:Default:faq }
+privacy:
+    path:     /privacy-policy
+    defaults: { _controller: HESIndiaBundle:Default:privacy }
+terms:
+    path:     /terms-conditions
+    defaults: { _controller: HESIndiaBundle:Default:terms }
+contact:
+    path:     /contact-us
+    defaults: { _controller: HESIndiaBundle:Default:contact }
+contacttwo:
+    path:     /contact-hitech
+    defaults: { _controller: HESIndiaBundle:Default:contacttwo }
+services:
+    path:     /company-services/{activelink}
+    defaults: { _controller: HESIndiaBundle:Default:services }
+
+add_ticket:
+    path:     /add-ticket
+    defaults: { _controller: HESIndiaBundle:Default:addTicket }
+ticket_contents:
+    path:     /ticket-adding
+    defaults: { _controller: HESIndiaBundle:Default:ticketContents }
+list_ticket:
+    path:     /listing-ticket
+    defaults: { _controller: HESIndiaBundle:Default:listTicket }
+view_ticket:
+    path:     /view-ticket/{ticketId}
+    defaults: { _controller: HESIndiaBundle:Default:viewTicket }
+
+user_profile:
+    path:     /profile
+    defaults: { _controller: HESIndiaBundle:Default:userProfile }

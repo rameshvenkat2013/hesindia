@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\Services" table="services">
+    <id name="serialId" type="integer" column="serial_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="mainServices" type="string" column="main_services" length="40" nullable="false"/>
+    <field name="services" type="string" column="services" length="40" nullable="false"/>
+    <field name="serviceDescription" type="text" column="service_description" nullable="false"/>
+    <field name="serviceFile" type="string" column="service_file" length="100" nullable="false"/>
+  </entity>
+</doctrine-mapping>

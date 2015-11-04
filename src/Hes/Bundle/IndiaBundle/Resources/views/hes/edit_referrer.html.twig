@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://pvwebco.com/ticketing_systems/add_engineer.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Edit Referrer | Ticketing Software</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+    
+    {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+    
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }
+span.error {
+    display: block;
+    margin-bottom: 13px;
+    color: red;
+}
+
+</style></head>
+    
+
+<body>
+
+<!-- MAIN PAGE CONTAINER -->
+<div class="boxed-container">
+
+{{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+    
+<!-- MAIN TITLE -->
+<div class="main-title">
+    <div class="container">
+        <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">Edit Referrer
+        </h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-9">
+            <form style="margin-top: 22px;" action="{{ path('edit_referrer', { 'ref_id' : field.ref_id }) }}" method="POST" novalidate="true">
+                <div class="col-xs-12  col-md-6">
+                    <div class="form-group">
+                        <input type="text" placeholder="Referrer Id" aria-invalid="false" aria-required="true" size="40" name="ref_id" readonly value="{{field.ref_id|default('') }}">
+                        {#<span class="error">{{error.ref_id.desc|default('')}}</span>#}
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Referrer Name" id="datepicker" aria-invalid="false" aria-required="true" size="40" name="ref_name" readonly value="{{field.ref_name|default('') }}">
+                        {#<span class="error">{{error.ref_name.desc|default('')}}</span>#}
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Email Id" aria-invalid="false" aria-required="true" size="40" name="email_id" required="" value="{{field.email_id|default('')}}">
+                        <span class="error">{{error.email_id.desc|default('')}}</span>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Mobile Number" aria-invalid="false" aria-required="true" size="40" name="mobile_no" required="" value="{{field.mobile_no|default('')}}">
+                        <span class="error">{{error.mobile_no.desc|default('')}}</span>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Remarks" aria-invalid="false" aria-required="true" size="40" name="remarks" required="" value="{{field.remarks|default('')}}">
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                    <div class="form-group">
+                        <input type="text" placeholder="Address1" aria-invalid="false" aria-required="true" size="40" name="address1" required="" value="{{field.address1|default('')}}">
+                        <span class="error">{{error.address1.desc|default('')}}</span>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Address2" aria-invalid="false" aria-required="true" size="40" name="address2" required="" value="{{field.address2|default('')}}">
+                        <span class="error">{{error.address2.desc|default('')}}</span>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Pin Code" aria-invalid="false" aria-required="true" size="40" name="pincode" required="" value="{{field.pincode|default('')}}">
+                        <span class="error">{{error.pincode.desc|default('')}}</span>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="City" aria-invalid="false" aria-required="true" size="40" name="city" required="" value="{{field.city|default('')}}">
+                        <span class="error">{{error.city.desc|default('')}}</span>
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="State" aria-invalid="false" aria-required="true" size="40" name="state" required="" value="{{field.state|default('')}}">
+                        <span class="error">{{error.state.desc|default('')}}</span>
+                    </div>
+                </div>
+                    <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                        <input type="submit" style="margin-bottom: 10px;" class="btn btn-primary pull-left" value="Edit Referrer" name="submit_referrer">
+                    </div>
+            </form>
+        </div>
+
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+
+
+</div><!-- /.boxed-container -->
+
+
+<script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

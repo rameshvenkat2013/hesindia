@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://pvwebco.com/ticketing_systems/listing-tickets.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>List Material Receipts | Ticketing Software</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+    
+    {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+	
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+	
+	<!-- MAIN PAGE CONTAINER -->
+	<div class="boxed-container">
+
+    {{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+		
+		<!-- MAIN TITLE -->
+		<div class="main-title">
+			<div class="container">
+                <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">PrintList Material Receipts
+                </h1>
+			</div>
+		</div><!-- /.main-title -->
+
+    {#
+    <div class="container">
+        <div class="col-md-3">
+            <input type="text" placeholder="Search Here" aria-invalid="false" aria-required="true" size="40" value="" name="subject" required="" style="border: 1px solid #e1e1e1;">
+        </div>
+        <div class="col-md-3">
+            <input type="text" placeholder="dd/mm/yyyy" id="datepicker" aria-invalid="false" aria-required="true" size="40" value="" name="subject" required="" style="border: 1px solid #e1e1e1;" class="hasDatepicker">
+        </div>
+
+        <div class="col-md-3">
+            <select aria-invalid="false" name="service" style="border: 1px solid #e1e1e1;">
+                <option value="Cargo">Status</option>
+                <option value="Ground Transport">Internet</option>
+                <option value="Logistic Service">News</option>
+                <option value="Storage">Email</option>
+            </select>
+        </div><div class="col-md-3">
+        <select aria-invalid="false" name="service" style="border: 1px solid #e1e1e1;">
+            <option value="Cargo">Engineer</option>
+            <option value="Ground Transport">Internet</option>
+            <option value="Logistic Service">News</option>
+        </select>
+    </div>
+    </div>
+#}
+		
+		<div class="container">
+			
+			<div class="row">
+
+				<main class="col-xs-12 col-md-9 col-md-push-3">
+
+					<div class="row margin-bottom-30">
+                                            
+									<table class="table" style="margin-left: 0px;">
+						<thead>
+						<tr>
+							<th colspan="5"></th>
+						</tr>
+						<tr>
+							<th colspan="4">{{ 'Materials List ' }}</th>
+						</tr>
+						<tr>
+							<th style="text-align:left; width:50px;">Receipt Date</th>
+							<th style="text-align:left; width:50px;">Company Name</th>
+							<th style="text-align:left; width:50px;">Material Description</th>
+							<th style="text-align:left; width:50px;">Reported Issue</th>
+							<th style="text-align:left; width:50px;">Job No.</th>
+						</tr>
+						</thead>
+						<tbody>
+
+                                                    {% for data in printlist %}
+
+						<tr>
+                                                        <td style="text-align:left;" width="15%">{{data.date|date('d/m/Y')}}</td>
+							<td style="text-align:left;" width="15%">
+                                                                {{ render( controller('HESIndiaBundle:Default:getCustomerName' , { 'custId' : data.customerId} ) ) }}
+                                                        </td>
+							<td style="text-align:left;" width="15%">{{data.mat_desc}}</td>
+							<td style="text-align:left;" width="15%">{{data.issue}}</td>
+                                                        
+                                                        {% set split_str = data.job_no|split('/') %}
+                                                        
+                                                        
+							<td style="text-align:left;" width="15%">
+                                                                {{split_str[0]}}
+                                                                
+                                                                {% set new_job_no = split_str[0]|slice(1) %}
+                                                                <a target="_blank" href="{{ path('display_mra', { 'job_no' : new_job_no }) }}">Print MRA</a>
+                                                        </td>
+						</tr>
+                                                    {% endfor %}
+                                                <tr>
+							<td colspan="5"></td>
+						</tr>
+                                                </tbody>
+					</table>
+							
+					</div><!-- /.row -->
+
+				</main><!-- /.col -->
+
+                                {#
+                                <div class="col-xs-12 col-md-3 col-md-pull-9">
+                                        {{ render( controller('HESIndiaBundle:Default:sidebarLinks' ) ) }}
+                                </div><!-- /.col -->
+                                #}
+
+			</div><!-- /.row -->
+			
+		</div><!-- /.container -->
+		
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+                
+	</div><!-- /.boxed-container -->
+	
+<script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+<script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+<script>
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

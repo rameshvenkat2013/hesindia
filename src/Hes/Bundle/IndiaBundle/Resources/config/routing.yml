@@ -1,0 +1,167 @@
+######################################################################################################
+hes_india_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HESIndiaBundle:Default:index }
+hes_welcome-page:
+    path:     /
+    defaults: { _controller: HESIndiaBundle:Default:homepage }
+login_check:
+    path:     /login_check
+    #defaults: { _controller: HESIndiaBundle:Login:loginCheck }
+log_out:
+    path:     /logout
+after_login:
+    path:     /LoginSuccessful
+    defaults: { _controller: HESIndiaBundle:Default:LoginSuccess }
+about_us:
+    path:     /about-us
+    defaults: { _controller: HESIndiaBundle:Default:aboutUs }
+faq:
+    path:     /frequently-asked-questions
+    defaults: { _controller: HESIndiaBundle:Default:faq }
+privacy:
+    path:     /privacy-policy
+    defaults: { _controller: HESIndiaBundle:Default:privacy }
+terms:
+    path:     /terms-conditions
+    defaults: { _controller: HESIndiaBundle:Default:terms }
+contact:
+    path:     /contact-us
+    defaults: { _controller: HESIndiaBundle:Default:contact }
+contacttwo:
+    path:     /contact-hitech
+    defaults: { _controller: HESIndiaBundle:Default:contacttwo }
+contact_store:
+    path:     /contact-storing
+    defaults: { _controller: HESIndiaBundle:Default:contactStore }
+services:
+    path:     /company-services/{activelink}
+    defaults: { _controller: HESIndiaBundle:Default:services }
+
+search_ticket:
+    path:     /search-ticket
+    defaults: { _controller: HESIndiaBundle:Default:searchTicket }
+add_ticket:
+    path:     /add-ticket
+    defaults: { _controller: HESIndiaBundle:Default:addTicket }
+print_mra:
+    path:     /materials-receipt-details/{job_no}
+    defaults: { _controller: HESIndiaBundle:Default:printmra }
+display_mra:
+    path:     /print-receipt/{job_no}
+    defaults: { _controller: HESIndiaBundle:Default:displaymra }
+list_ticket:
+    path:     /listing-ticket
+    defaults: { _controller: HESIndiaBundle:Default:listTicket }
+print_ticket:
+    path:     /printing-ticket
+    defaults: { _controller: HESIndiaBundle:Default:printTicket }
+view_ticket:
+    path:     /view-ticket/{ticketId}
+    defaults: { _controller: HESIndiaBundle:Default:viewTicket }
+store_remarks:
+    path:     /store-ticket-remarks
+    defaults: { _controller: HESIndiaBundle:Default:storeRemarks }
+close_ticket:
+    path:     /close-the-ticket/{ticketid}
+    defaults: { _controller: HESIndiaBundle:Default:closeTicket }
+open_ticket:
+    path:     /open-the-ticket/{ticketid}
+    defaults: { _controller: HESIndiaBundle:Default:openTicket }
+
+
+######################## CUSTOMER ROUTING LINKS ######################################################
+
+add_customer:
+    path:     /add-customer
+    defaults: { _controller: HESIndiaBundle:Default:addCustomer }
+edit_customer:
+    path:     /edit-customer/{comp_id}
+    defaults: { _controller: HESIndiaBundle:Default:editCustomer }
+list_customer:
+    path:     /list-customer/{pageNo}
+    defaults: { _controller: HESIndiaBundle:Default:listCustomer, pageNo : 0 }
+cust_profile:
+    path:     /customer-profile/{compId}
+    defaults: { _controller: HESIndiaBundle:Default:custProfile }
+customer_info:
+    path:     /customer-adding
+    defaults: { _controller: HESIndiaBundle:Default:customerInfo }
+
+######################## ENGINEER ROUTING LINKS ######################################################
+add_engineer:
+    path:     /add-engineer
+    defaults: { _controller: HESIndiaBundle:Default:addEngineer }
+edit_engineer:
+    path:     /edit-engineer/{eng_id}
+    defaults: { _controller: HESIndiaBundle:Default:editEngineer }
+list_engineer:
+    path:     /list-engineer
+    defaults: { _controller: HESIndiaBundle:Default:listEngineer }
+engg_profile:
+    path:     /engineer-profile/{enggId}
+    defaults: { _controller: HESIndiaBundle:Default:enggProfile }
+engineer_info:
+    path:     /engineer-adding
+    defaults: { _controller: HESIndiaBundle:Default:engineerInfo }
+engg_relieve:
+    path:     /engineer-relieve/{engg_id}
+    defaults: { _controller: HESIndiaBundle:Default:engineerRelieve }
+
+######################## REFERRER ROUTING LINKS ######################################################
+
+add_referrer:
+    path:     /add-referrer
+    defaults: { _controller: HESIndiaBundle:Default:addReferrer }
+edit_referrer:
+    path:     /edit-referrer/{ref_id}
+    defaults: { _controller: HESIndiaBundle:Default:editReferrer }
+list_referrer:
+    path:     /list-referrer
+    defaults: { _controller: HESIndiaBundle:Default:listReferrer }
+ref_profile:
+    path:     /referrer-profile/{refId}
+    defaults: { _controller: HESIndiaBundle:Default:refProfile }
+referrer_info:
+    path:     /referrer-adding
+    defaults: { _controller: HESIndiaBundle:Default:referrerInfo }
+
+######################################################################################################
+user_profile:
+    path:     /profile
+    defaults: { _controller: HESIndiaBundle:Default:userProfile }
+edit_profile:
+    path:     /edit-profile
+    defaults: { _controller: HESIndiaBundle:Default:editProfile }
+change_password:
+    path:     /change-password
+    defaults: { _controller: HESIndiaBundle:Default:changePassword }
+change_pass_query:
+    path:     /changing-password
+    defaults: { _controller: HESIndiaBundle:Default:changePassQuery }
+
+######################################################################################################
+user_profile:
+    path:     /profile
+    defaults: { _controller: HESIndiaBundle:Default:userProfile }
+edit_profile:
+    path:     /edit-profile
+    defaults: { _controller: HESIndiaBundle:Default:editProfile }
+change_password:
+    path:     /change-password
+    defaults: { _controller: HESIndiaBundle:Default:changePassword }
+change_pass_query:
+    path:     /changing-password
+    defaults: { _controller: HESIndiaBundle:Default:changePassQuery }
+######################################################################################################
+
+
+######################################################################################################
+unassigned_list:
+    path:     /materials-unassigned-list/{pageNo}
+    defaults: { _controller: HESIndiaBundle:Default:unassignedList, pageNo : 0 }
+######################################################################################################
+search_cust:
+    path:     /search-customers
+    defaults: { _controller: HESIndiaBundle:Default:searchCustomers }
+######################################################################################################

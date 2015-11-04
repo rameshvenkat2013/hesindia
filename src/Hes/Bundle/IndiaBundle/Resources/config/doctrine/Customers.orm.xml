@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\Customers" table="customers">
+    <unique-constraints>
+      <unique-constraint name="company_id" columns="company_id"/>
+    </unique-constraints>
+    <id name="rowId" type="integer" column="row_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="companyId" type="string" column="company_id" length="20" nullable="false"/>
+    <field name="companyName" type="string" column="company_name" length="500" nullable="false"/>
+    <field name="contactPerson" type="string" column="contact_person" length="100" nullable="false"/>
+    <field name="designation" type="string" column="designation" length="100" nullable="false"/>
+    <field name="mobileNo" type="bigint" column="mobile_no" nullable="false"/>
+    <field name="phoneNo" type="bigint" column="phone_no" nullable="false"/>
+    <field name="address1" type="string" column="address1" length="100" nullable="false"/>
+    <field name="address2" type="string" column="address2" length="100" nullable="false"/>
+    <field name="city" type="string" column="city" length="100" nullable="false"/>
+    <field name="pinCode" type="bigint" column="pin_code" nullable="false"/>
+    <field name="state" type="string" column="state" length="100" nullable="false"/>
+    <field name="email" type="string" column="email" length="100" nullable="false"/>
+    <field name="website" type="string" column="website" length="100" nullable="true"/>
+    <field name="tinNo" type="bigint" column="tin_no" nullable="false"/>
+    <field name="additionalDetails" type="string" column="additional_details" length="100" nullable="false"/>
+    <field name="referredBy" type="string" column="referred_by" length="100" nullable="false"/>
+    <field name="remarks" type="text" column="remarks" nullable="false"/>
+  </entity>
+</doctrine-mapping>

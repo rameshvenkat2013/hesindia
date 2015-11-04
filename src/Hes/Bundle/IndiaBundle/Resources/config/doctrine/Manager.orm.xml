@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\Manager" table="manager">
+    <id name="rowId" type="integer" column="row_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="enggId" type="integer" column="engg_id" nullable="false"/>
+    <field name="enggEmail" type="string" column="engg_email" length="50" nullable="false"/>
+    <field name="engineerName" type="string" column="engineer_name" length="50" nullable="false"/>
+    <field name="designation" type="string" column="designation" length="50" nullable="false"/>
+    <field name="bloodGroup" type="string" column="blood_group" length="50" nullable="false"/>
+    <field name="mobileNo" type="string" column="mobile_no" length="50" nullable="false"/>
+    <field name="address1" type="string" column="address1" length="50" nullable="false"/>
+    <field name="address2" type="string" column="address2" length="50" nullable="false"/>
+    <field name="pincode" type="bigint" column="pincode" nullable="false"/>
+    <field name="city" type="string" column="city" length="50" nullable="false"/>
+    <field name="state" type="string" column="state" length="50" nullable="false"/>
+    <field name="dateOfJoining" type="date" column="date_of_joining" nullable="false"/>
+  </entity>
+</doctrine-mapping>

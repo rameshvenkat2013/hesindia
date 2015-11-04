@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost/hesindia/web/app_dev.php/homepage -->
+<html lang="en" class=" js flexbox no-touch js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js flexbox no-touch js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <link rel="shortcut icon" href="http://localhost/hesindia/web/bundles/hes/images/hes_fav.png" type="image/png">
+        
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ticketing Software</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="./home_new_page_files/style_popup.css">
+    <link rel="stylesheet" href="./home_new_page_files/style.css">
+    <link rel="stylesheet" href="./home_new_page_files/magnific-popup.css">
+
+    
+    <style>
+        div.col-sm-6 p
+        {
+             text-align: justify;
+        }
+    </style>
+    
+        <script src="./home_new_page_files/modernizr.custom.24530.js"></script>
+        
+	<script>
+	/* Google Map Market Settings */
+	
+	var mapMarkers = [
+		{
+			"id": "1",
+			"title": "CargoPress",
+			"address": "Changi Airport, Singapore",
+			"custompinimage": "images\/pin.png"
+		}
+	]
+	</script>
+	
+        
+        
+        <script src="./home_new_page_files/common.js"></script>
+        <script src="./home_new_page_files/util.js"></script>
+        <script src="./home_new_page_files/stats.js"></script>
+        <script src="./home_new_page_files/AuthenticationService.Authenticate"></script>
+
+</head>
+<body>
+    
+                <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+                    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+                        <label style="font-size:20px; margin-left:10px">Sign In</label>
+                        <div>                             <form class="cd-form" method="POST" action="http://localhost/hesindia/web/app_dev.php/login_check">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" name="_username" id="signin-email" type="text" placeholder="E-mail" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-password" for="signin-password">Password</label>
+                                    <input class="full-width has-padding has-border" name="_password" id="signin-password" type="password" placeholder="Password" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+
+                                </p>
+
+                            
+                                <p class="fieldset">
+                                    <input class="full-width" type="submit" value="Login">
+                                </p>
+                            </form>
+
+
+                        </div> <!-- cd-login -->
+
+                    </div> <!-- cd-user-modal-container -->
+                </div>
+	<!-- MAIN PAGE CONTAINER -->
+	<div class="boxed-container">
+
+		
+
+<!-- TOP BAR -->
+		<div class="top">
+			
+			<div class="container">
+ 
+				<div class="top__tagline">Welcome to Hitech Electronic Service</div>
+				
+				<nav class="top__menu">
+					<ul class="top-navigation js-dropdown">
+                        <li>
+							<a href="http://localhost/hesindia/web/app_dev.php/frequently-asked-questions">FAQ's</a>
+						</li>
+						<li>
+							<a href="http://localhost/hesindia/web/app_dev.php/terms-conditions" target="_blank">Terms &amp; Conditions</a>
+						</li>
+                        <li>
+                            <a href="http://localhost/hesindia/web/app_dev.php/privacy-policy" target="_blank">Privacy Policy</a>
+                        </li>
+					</ul> 
+				</nav>
+			
+			</div><!-- /.container -->
+		
+		</div><!-- /.top -->
+		
+		<!-- HEADER -->
+		<div class="header__container">
+			
+			<div class="container">
+				
+				<header class="header">
+					
+					<div class="header__logo" style="padding-top: 20px;">
+						<a href="./home_new_page_files/home_new_page.html">
+
+							<img class="img-responsive" srcset="/hesindia/web/bundles/hes/images/hes_new_logo.png, bundles/hes/images/hes_new_logo.png" alt="HES_logo">
+						</a>
+						<button data-target="#cargopress-navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+							<span class="navbar-toggle__text">MENU</span>
+							<span class="navbar-toggle__icon-bar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</span>
+						</button>
+					</div><!-- /.header__logo -->
+					
+					<div class="header__navigation">
+						<nav class="collapse navbar-collapse" id="cargopress-navbar-collapse">
+							<ul class="main-navigation js-main-nav js-dropdown">
+								<li class="current-menu-item">
+									<a href="./home_new_page_files/home_new_page.html">Home</a>
+									<!--<ul role="menu" class="sub-menu">
+										<li><a href="index.html">Default homepage</a></li>
+										<li><a href="index_video.html">Homepage with video</a></li>
+										<li><a href="index_static.html">Homepage with static image</a></li>
+									</ul>-->
+								</li>
+								<li><a href="http://localhost/hesindia/web/app_dev.php/homepage#serviceslink">Services</a></li>
+								<li class="">
+									<a href="http://localhost/hesindia/web/app_dev.php/homepage#aboutuslink">About Us</a>
+								</li>
+								<li><a href="http://localhost/hesindia/web/app_dev.php/homepage#imagegallerylink">Image Gallery</a></li>
+								<li><a href="http://localhost/hesindia/web/app_dev.php/contact-us">Contact</a></li>
+							</ul>
+						</nav>
+					</div><!-- /.header__navigation -->
+					
+					<div class="header__widgets">
+						
+						<div class="widget-icon-box">
+							
+							<div class="icon-box">	
+								<i class="fa fa-headphones"></i>
+								<h4 class="icon-box__title">Call Us Anytime</h4>
+								<span class="icon-box__subtitle">+91 855 300 3025</span>
+							</div>
+						
+						</div>
+						
+						<div class="widget-icon-box">
+
+                            <div class="icon-box">
+                                <i class="fa fa-clock-o"></i>
+                                <h4 class="icon-box__title">Working Hours</h4>
+                                <span class="icon-box__subtitle">9:30 AM - 6:30 PM</span>
+                            </div>
+						
+						</div>
+					
+						<div class="widget-icon-box">
+
+                            <div class="icon-box">
+                                <i class="fa fa-envelope-o"></i>
+                                <h4 class="icon-box__title">Email Us</h4>
+                                <span class="icon-box__subtitle">pmgowda@hesindia.net</span>
+                            </div>
+							
+                                                </div>
+
+                        <nav class="main-nav">
+                            <ul>
+                                <!-- inser more links here -->
+                                <!--<li><a class="cd-signin" href="#0">Sign in</a></li>-->
+                                <li><a class="btn btn-info cd-signin">LOGIN</a></li>
+                            </ul>
+                        </nav>
+
+
+                        				
+					</div><!-- /.header__widgets -->
+				
+					<div class="header__navigation-widgets">
+						<a target="_blank" href="https://www.facebook.com/" class="social-icons__link"><i class="fa fa-facebook"></i></a>
+						<a target="_blank" href="https://twitter.com/" class="social-icons__link"><i class="fa fa-twitter"></i></a>
+						<!--
+                                                <a target="_blank" href="https://plus.google.com/" class="social-icons__link"><i class="fa fa-google-plus"></i></a>
+						<a target="_blank" href="https://www.youtube.com/" class="social-icons__link"><i class="fa fa-youtube"></i></a>
+                                                -->
+					</div>
+			
+				</header>
+			
+			</div><!-- /.container -->
+		
+		</div><!-- /.header__container -->
+
+		<!-- JUMBOTRON -->
+		<div class="jumbotron jumbotron--with-captions">
+
+			<div data-interval="5000" data-ride="carousel" id="headerCarousel" class="carousel slide">
+ 
+				<div class="carousel-inner">
+
+                                        <div class="item">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" srcset="/hesindia/web/bundles/hes/images/placeholders/workdesk1.png 1920w, bundles/hes/images/placeholders/workdesk1.png 425w" src="./home_new_page_files/workdesk1.png">
+											</div><!-- /.item -->
+					
+					<div class="item active">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" srcset="/hesindia/web/bundles/hes/images/placeholders/workdesk2.png 1920w, bundles/hes/images/placeholders/workdesk2.png 425w" src="./home_new_page_files/workdesk2.png">
+											</div><!-- /.item -->
+                                        
+                                        
+                                        <div class="item">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" srcset="/hesindia/web/bundles/hes/images/placeholders/workdesk3.png 1920w, bundles/hes/images/placeholders/workdesk3.png 425w" src="./home_new_page_files/workdesk3.png">
+                                                					</div><!-- /.item -->
+                                        
+                                        <div class="item">
+						<img alt="CRANE TO TRAIN, WE DO EVERYTHING" sizes="100vw" srcset="/hesindia/web/bundles/hes/images/placeholders/workdesk4.png 1920w, bundles/hes/images/placeholders/workdesk4.png 425w" src="./home_new_page_files/workdesk4.png">
+                                                					</div><!-- /.item -->
+                                        
+                                        
+
+				</div><!-- /.carousel-inner -->
+			
+				<div class="container" id="serviceslink">
+ 
+					<a data-slide="prev" role="button" href="http://pvwebco.com/ticketing_systems/#headerCarousel" class="left jumbotron__control">
+						<i class="fa  fa-caret-left"></i>
+					</a>
+					<a data-slide="next" role="button" href="http://pvwebco.com/ticketing_systems/#headerCarousel" class="right jumbotron__control">
+						<i class="fa  fa-caret-right"></i>
+					</a>
+				</div><!-- /.container -->
+				
+			</div><!-- /.carousel -->
+			
+		</div><!-- /.jumbotron -->
+		
+		<!-- OUR SERVICES -->
+		<div class="container" role="main">
+			
+			                        <!-- /.row -->
+			
+			<div class="row">
+				
+				<div class="col-sm-12">
+					
+					<h3 class="widget-title big lined">
+						<span>OUR SERVICES</span>
+					</h3>
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+			
+			<div class="row">
+				
+				<div class="col-sm-4">
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/DRS" class="icon-box">
+							                            <h4 class="icon-box__title">Drive Repairing Services</h4>
+                            <span class="icon-box__subtitle">Sed ut perspiciatis unde omnis iste natus error sit.</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/CRS" class="icon-box">
+							                            <h4 class="icon-box__title">Controller Repairing Service</h4>
+                            <span class="icon-box__subtitle">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+				
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/CNCRS" class="icon-box">
+							                            <h4 class="icon-box__title">CNC Repairing Service</h4>
+                            <span class="icon-box__subtitle">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+
+                                        
+					<div class="widget widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/CBRS" class="icon-box">
+							                            <h4 class="icon-box__title">Circuit Board Repairing Service</h4>
+                            <span class="icon-box__subtitle">Sed quia non numquam eius modi tempora incidunt ut labore</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+										
+				</div><!-- /.col -->
+
+                                <div class="col-sm-4">
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/IRS" class="icon-box">
+							                            <h4 class="icon-box__title">Instrument Repairing Service</h4>
+                            <span class="icon-box__subtitle">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+					<div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/TPRS" class="icon-box">
+							                            <h4 class="icon-box__title">Teach Pendant Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+				
+                            
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/PSRS" class="icon-box">
+							                            <h4 class="icon-box__title">Power Supply Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/PLCRS" class="icon-box">
+							                            <h4 class="icon-box__title">PLC Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                            </div><!-- /.col -->
+				
+				<div class="col-sm-4">
+				
+                                        
+                                    <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/SSRS" class="icon-box">
+							                            <h4 class="icon-box__title">Soft Starter Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/HMIRS" class="icon-box">
+							                            <h4 class="icon-box__title">HMI Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+                                        <div class="widget_pw_icon_box margin-bottom-30">
+						<a target="_self" href="http://localhost/hesindia/web/app_dev.php/company-services/BURS" class="icon-box">
+							                            <h4 class="icon-box__title">Braking Unit Repairing Service</h4>
+                            <span class="icon-box__subtitle">But I must explain to you how all this mistaken idea of denouncing</span>
+						</a>
+					</div><!-- /.widget_pw_icon_box -->
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+			
+		</div><!-- /.conainer -->
+		
+                		<!-- NEWS -->
+
+		
+		<!-- VALUES -->
+		<div class="values margin-bottom-60">
+			
+			<div class="container">
+				
+				<div class="col-sm-8 col-sm-offset-2">
+					
+					<h3>OUR CORE VALUES</h3>
+					<p class="text-center">
+                        Team of experts delivering the state-of-art electronic products servicing at a reasonable and fair price range without compromising in the quality with 15-day warranty period.
+					</p>
+					<!--<p class="text-center">
+						<img alt="signature" src="images/signature.png">
+					</p>-->
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.container -->
+			
+		</div><!-- /.values -->
+		
+		<!-- ABOUT / QUICK QUITE / GALLERY / FAQ -->
+		<div class="container" id="aboutuslink">
+			
+			<div class="row margin-bottom-60">
+				
+				<div class="col-sm-6">
+					
+					<h3 class="widget-title big lined">
+						<span>ABOUT US</span>
+					</h3>
+					<p>
+                        HITECH ELECTRONIC SERVICES (HES) was founded and established on 2011 by Qualified and highly Experienced Technocrats with vast experience of more than about 21 years in the Industrial Automation Products, Power Electronics, Telecommunication Products, and Instrumentation industry in Service and Repairs field.
+
+
+					</p>
+					<p>
+                        The very idea behind Establishing HES is the fact that in the manufacturing Industry every Machine has Electronics for say controlling operational functions, or for driving a motor or for protection of expensive heavy equipment or Machinery or for any automotive operations etc
+					</p>
+                                        <p>
+                        And these electronics when malfunction or fail, due to various reasons like Supply voltage fluctuations, Extreme operating conditions, like  hi Humid conditions or high temperature conditions or life of the components (ageing), etc.. and the amount of direct and indirect losses incurred in terms like Productivity is enormous.
+                                        </p>
+					<p>
+						<a href="http://localhost/hesindia/web/app_dev.php/about-us" class="read-more">READ MORE ABOUT US</a>
+					</p>
+					
+				</div><!-- /.col -->
+				
+				<div class="col-sm-6" id="quickQuoteForm_wrapper">
+					
+					<div class="featured-widget">
+						
+						<h3 class="widget-title">
+                            CONTACT US
+						</h3>
+						
+						<p>
+						But i must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete count.
+						</p>
+						
+						<form>
+							<div style="display:none"><input type="text" name="maximus" value="" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;"></div>
+							<input type="hidden" name="subject" value="CargoPress: Quick Quote Request">
+							<div class="contact-form-small">
+                                <div class="row">
+                                    <div class="col-xs-12  col-md-6">
+                                        <div class="form-group"><!-- has-error-->
+                                            <input type="text" placeholder="First Name" aria-invalid="false" aria-required="true" size="40" value="" name="name" required="">
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="email" placeholder="Subject" aria-invalid="false" aria-required="true" size="40" value="" name="email" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12  col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Last Name" aria-invalid="false" aria-required="true" size="40" value="" name="subject" required="">
+                                        </div>
+                                        <div class="form-group ">
+                                            <input type="email" placeholder="E-mail address" aria-invalid="false" aria-required="true" size="40" value="" name="email" required="">
+                                        </div>
+                                    </div>
+                                        
+                                        <select aria-invalid="false" name="service">
+                                            <option value="Cargo">How you come to know</option>
+                                            <option value="Ground Transport">Internet</option>
+                                            <option value="Logistic Service">Friends</option>
+                                            <option value="Storage">News</option>
+                                        </select>
+                                        <div class="form-group">
+                                            <textarea placeholder="Message *" aria-invalid="false" rows="10" cols="40" name="message" required=""></textarea>
+                                        </div>
+                                    <div class="col-xs-12  col-md-12">
+                                        <input type="submit" class="btn btn-primary pull-right " value="SEND MESSAGE">
+                                        <img class="ajax-loader" id="loader" src="./home_new_page_files/ajax-loader.gif" alt="Sending ..." style="display:none;">
+                                    </div>
+                                </div><!-- /.row -->
+								<div class="response success">Your message was sent; we'll be in touch shortly!</div>
+								<div class="response error">Unfortunately, we could not sent your message right now. Please try again.</div>
+							</div><!-- /.contact-form-small -->
+						</form>
+
+					</div><!-- /.featured-widget -->
+
+				</div><!-- /.col -->
+
+			</div><!-- /.row -->
+
+			<div class="row margin-bottom-60" id="imagegallerylink">
+
+				<div class="col-sm-6">
+
+					<div class="widget_black-studio-tinymce">
+
+						<h3 class="widget-title lined big">
+							<span>Image GALLERY</span>
+						</h3>
+
+						<div class="gallery gallery-columns-3 gallery-size-medium">
+							<figure class="gallery-item">
+								<a href="http://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="./home_new_page_files/ABB-VFD_1.jpeg">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="http://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="./home_new_page_files/AC-Tech-Drive.jpeg">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="http://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="./home_new_page_files/Allen-Bradley-AC-Drive.jpeg">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="http://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="./home_new_page_files/Baumuller-drive.jpeg">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="http://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="./home_new_page_files/Bosch-Drive.jpeg">
+								</a>
+							</figure>
+							<figure class="gallery-item">
+								<a href="http://pvwebco.com/ticketing_systems/images/placeholders/848x480.png">
+									<img alt="placeholder" src="./home_new_page_files/Danaher-Motion-Drive.jpeg">
+								</a>
+							</figure>
+						</div><!-- /.gallery -->
+						
+					</div><!-- /.widget_black-studio-tinymce -->
+					
+				</div><!-- /.col -->
+				
+				<div class="col-sm-6">
+						
+					<h3 class="widget-title lined big">
+						<span>FAQ</span>
+					</h3>
+					<h4>
+						<a target="_blank" href="http://pvwebco.com/ticketing_systems/faq.html" class="dark-link text-uppercase">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium?</a>
+					</h4>
+					<hr>
+					<h4>
+						<a target="_blank" href="http://pvwebco.com/ticketing_systems/faq.html" class="dark-link text-uppercase">Lorem ipsum dolor sit amet, consectetur?</a>
+					</h4>
+					<hr>
+					<h4>
+						<a target="_blank" href="http://pvwebco.com/ticketing_systems/faq.html" class="dark-link text-uppercase">doloremque laudantium, totam rem aperiam?</a>
+					</h4>
+					<hr>
+                                        <h4>
+						<a target="_blank" href="http://pvwebco.com/ticketing_systems/faq.html" class="dark-link text-uppercase">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium?</a>
+					</h4>
+					<hr>
+					<h4>
+						<a target="_blank" href="http://pvwebco.com/ticketing_systems/faq.html" class="dark-link text-uppercase">Lorem ipsum dolor sit amet, consectetur?</a>
+					</h4>
+					<hr>
+					<h4>
+						<a target="_blank" href="http://pvwebco.com/ticketing_systems/faq.html" class="dark-link text-uppercase">doloremque laudantium, totam rem aperiam?</a>
+					</h4>
+					<hr>
+					<p>
+						<a href="http://pvwebco.com/ticketing_systems/faq.html" class="read-more">READ MORE FAQs</a>
+					</p>
+					
+				</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+			
+		</div><!-- /.container -->
+		
+		<!-- TESTIMONIALS -->
+		<div class="testimonials">
+			
+			<div class="container">
+				
+				<div class="row margin-bottom-60">
+				
+					<div class="col-sm-12">
+					
+						<div class="testimonial">
+							
+							<h3 class="widget-title lined big">
+								<span>TESTIMONIALS</span>
+							</h3>
+							
+							<div class="testimonial__carousel">
+								<a data-slide="prev" href="http://pvwebco.com/ticketing_systems/#testimonalCarousel" class="testimonial__carousel--left">
+									<i aria-hidden="true" class="fa fa-caret-left"></i>
+									<span role="button" class="sr-only">Next</span>
+								</a>
+								<a data-slide="next" href="http://pvwebco.com/ticketing_systems/#testimonalCarousel" class="testimonial__carousel--right">
+									<i aria-hidden="true" class="fa fa-caret-right"></i>
+									<span role="button" class="sr-only">Previous</span>
+								</a>
+							</div><!-- /.testimonial__carousel -->
+							
+							<div data-interval="false" data-ride="carousel" class="carousel slide" id="testimonalCarousel">
+ 
+								<div role="listbox" class="carousel-inner">
+										
+									<div class="item">
+										<div class="row">
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                                                                      Very Happy with the efficient service. Also, quite pleased with the reasonable quotation.      
+													</p>
+													<cite class="testimonial__author">
+                                                        Chandra Shekar<span class="testimonial__author-description">, Aditi Pharmaceuticals Pvt.Ltd</span>
+													</cite>
+												</blockquote>
+											</div>
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                        Thanks for saving us from a major issue, and also timely delivery of the product made our internal operation more productive.
+													</p>
+													<cite class="testimonial__author">
+                                                        Vasanth Kumar<span class="testimonial__author-description">, Tech CNC Solutions</span>
+													</cite>
+												</blockquote>
+											</div>
+										</div>
+									</div><!-- /.item -->
+										
+									<div class="item active">
+										<div class="row">
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                        Our first service was a pleasant experience. We would definitely wish to comeback again.
+													</p>
+													<cite class="testimonial__author">
+                                                        Shivu<span class="testimonial__author-description">, Eagle Fitness World</span>
+													</cite>
+												</blockquote>
+											</div>
+											<div class="col-xs-12  col-sm-6">
+												<blockquote>
+													<p class="testimonial__quote">
+                                                        I was amazed with the service, looking at the complexity of the task given. Kudos Hesindia Technical Team
+													</p>
+													<cite class="testimonial__author">
+                                                        Rajshekar<span class="testimonial__author-description">, Tech CNC Solutions</span>
+													</cite>
+												</blockquote>
+											</div>
+										</div>
+									</div><!-- /.item -->
+										
+								</div><!-- /.carousel-inner -->
+									
+							</div><!-- /.carousel -->
+							
+						</div><!-- /.testimonial -->
+					
+					</div><!-- /.col -->
+				
+				</div><!-- /.row -->
+				
+			</div><!-- /.container -->
+			
+		</div><!-- /.testimonials -->
+		
+		<!-- MAP -->
+		<div class="map margin-bottom-60">
+						
+			<!--<div data-type="roadmap" data-zoom="7" data-markers='[{"id":"1","title":"CargoPress","address":"Kalmoesstraat 20, Apeldoorn","custompinimage":"images\/pin.png"}]' class="simple-map js-where-we-are"></div>
+			-->		<iframe src="./home_new_page_files/embed.html" margin-top:10px="" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+		</div><!-- /.map -->
+		
+
+		
+		<!-- FOOTER -->
+		<footer class="footer">
+			
+			<div class="footer-top">
+				
+				<div class="container">
+					
+					<div class="row">
+						
+						<div class="col-xs-12 col-md-4">
+							
+							<!--<p>
+								<img alt="logo-footer" src="images/logo-footer.png" class="logo">
+							</p>-->
+                            <h6 class="footer-top__headings text-uppercase">Hitech Electronic Service</h6>
+                            <p style="text-align:justify;">Team of experts delivering the state-of-art electronic products servicing at a reasonable and fair price range without compromising in the quality with 15-day warranty period.</p>
+							<p>
+								<a target="_blank" href="https://www.facebook.com/" class="icon-container icon-container--square">
+									<span class="fa fa-facebook"></span>
+								</a>
+								<a target="_blank" href="https://twitter.com/" class="icon-container icon-container--square">
+									<span class="fa fa-twitter"></span>
+								</a>
+								<!--<a target="_blank" href="http://themeforest.net/" class="icon-container icon-container--square">
+									<span class="fa fa-google-plus"></span>
+								</a>
+								<a target="_blank" href="https://www.youtube.com/" class="icon-container icon-container--square">
+									<span class="fa fa-youtube-play"></span>
+								</a>
+                                                                -->
+							</p>
+							
+						</div><!-- /.row -->
+						
+						<div class="col-xs-12 col-md-2">
+							
+							<div class="widget_nav_menu">
+								<h6 class="footer-top__headings">NAVIGATION</h6>
+								<ul>
+									<li>
+										<a href="http://localhost/hesindia/web/app_dev.php/">Home</a>
+									</li>
+									<li>
+										<a href="http://localhost/hesindia/web/app_dev.php/about-us" target="_blank">About Us</a>
+									</li>
+                                    <li>
+                                        <a href="http://localhost/hesindia/web/app_dev.php/company-services/DRS">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/hesindia/web/app_dev.php/">Image Gallery</a>
+                                    </li>
+                                    								</ul>
+							</div><!-- /.widget_nav_menu -->
+							
+						</div><!-- /.row -->
+						
+						<div class="col-xs-12 col-md-2">
+							
+							<div class="widget_nav_menu">
+								
+								<h6 class="footer-top__headings">QUICK LINKS</h6>
+                                <ul>
+                                    <li>
+                                        <a href="http://localhost/hesindia/web/app_dev.php/frequently-asked-questions">FAQ's</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/hesindia/web/app_dev.php/terms-conditions">Terms &amp; Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/hesindia/web/app_dev.php/privacy-policy">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://localhost/hesindia/web/app_dev.php/">Copy Rights</a>
+                                    </li>
+
+
+
+                                </ul>
+								
+							</div><!-- /.widget_nav_menu -->
+							
+						</div><!-- /.row -->
+						
+						<div class="col-xs-12 col-md-4">
+
+                            <h6 class="footer-top__headings">OFFICE LOCATION</h6>
+                            <p>
+                                        HITECH ELECTRONIC SERVICE <br> #828, Ground Floor, 14th Main, <br>Gubbi Veeranna Road(6th Cross), <br>Hanumanthanagara, Bengaluru - 560 019 <br> <br>
+                                        <i class="fa fa-headphones"></i> : 080-266 159 75 <br><i class="fa fa-envelope-o"></i> : pmgowda@hesindia.net
+                            </p>
+														
+						</div><!-- /.row -->
+						
+					</div><!-- /.row -->
+					
+				</div><!-- /.footer -->
+				
+                        <span id="siteseal" style="margin-left: 600px;">
+                            <script type="text/javascript" src="./home_new_page_files/getSeal"></script><img style="cursor:pointer;cursor:hand" src="./home_new_page_files/siteseal_gd_3_h_l_m.gif" onclick="verifySeal();" alt="SSL site seal - click to verify">
+                            <!--<img style="cursor:pointer;cursor:hand" src="https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_l_m.gif" 
+                                        onclick="verifySeal();" alt="SSL site seal - click to verify">-->
+                        </span>
+			</div><!-- /.footer-top -->
+			
+			<div class="footer-bottom">
+				
+				<div class="container">
+					
+					<!--<div class="footer-bottom__left">
+						CargoPress Theme Made by <a href="https://www.proteusthemes.com/">ProteusThemes</a>.
+					</div>-->
+					
+					<div class="footer-bottom__right">
+                        Copyright © 2015 Ticketing Systems. All rights reserved.
+					</div>
+					
+				</div><!-- /.container -->
+				
+			</div><!-- /.footer-bottom -->
+			
+		</footer>
+		
+	</div><!-- /.boxed-container -->
+
+        
+        <script src="./home_new_page_files/jquery-2.1.4.min.js"></script>
+        <script src="./home_new_page_files/carousel.js"></script>
+        <script src="./home_new_page_files/transition.js"></script>
+        <script src="./home_new_page_files/button.js"></script>
+        <script src="./home_new_page_files/collapse.js"></script>
+        <script src="./home_new_page_files/validator.js"></script>
+        <script src="./home_new_page_files/underscore.js"></script>
+        <script src="./home_new_page_files/main.js"></script>
+        <script src="./home_new_page_files/SimpleMap.js"></script>
+        <script src="./home_new_page_files/NumberCounter.js"></script>
+        <script src="./home_new_page_files/jquery.magnific-popup.min.js"></script>
+        <script src="./home_new_page_files/custom.js"></script>
+        <script src="./home_new_page_files/jquery.min.js"></script>
+        
+               <!-- Gem style -->
+        <script src="./home_new_page_files/modernizr.js"></script>
+        <script src="./home_new_page_files/jquery.min(1).js"></script>
+        <script src="./home_new_page_files/main(1).js"></script>
+<script src="./home_new_page_files/main(2).js"></script>
+<!-- Gem jQuery -->
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script>
+
+
+<div id="sfwdt4c31d9" class="sf-toolbar" style="display: block;" data-sfurl="/hesindia/web/app_dev.php/_wdt/4c31d9"><!-- START of Symfony Web Debug Toolbar -->
+    <div id="sfMiniToolbar-4c31d9" class="sf-minitoolbar" data-no-turbolink="" style="display: none;">
+        <a href="javascript:void(0);" title="Show Symfony toolbar" onclick="
+            var elem = this.parentNode;
+            if (elem.style.display == &#39;none&#39;) {
+                document.getElementById(&#39;sfToolbarMainContent-4c31d9&#39;).style.display = &#39;none&#39;;
+                document.getElementById(&#39;sfToolbarClearer-4c31d9&#39;).style.display = &#39;none&#39;;
+                elem.style.display = &#39;block&#39;;
+            } else {
+                document.getElementById(&#39;sfToolbarMainContent-4c31d9&#39;).style.display = &#39;block&#39;;
+                document.getElementById(&#39;sfToolbarClearer-4c31d9&#39;).style.display = &#39;block&#39;;
+                elem.style.display = &#39;none&#39;
+            }
+
+            Sfjs.setPreference(&#39;toolbar/displayState&#39;, &#39;block&#39;);
+        ">
+            <svg width="26" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 26 28" enable-background="new 0 0 26 28" xml:space="preserve"><path fill="#010202" d="M13 0C5.8 0 0 5.8 0 13c0 7.2 5.8 13 13 13c7.2 0 13-5.8 13-13C26 5.8 20.2 0 13 0z M20 7.5 c-0.6 0-1-0.3-1-0.9c0-0.2 0-0.4 0.2-0.6c0.1-0.3 0.2-0.3 0.2-0.4c0-0.3-0.5-0.4-0.7-0.4c-2 0.1-2.5 2.7-2.9 4.8l-0.2 1.1 c1.1 0.2 1.9 0 2.4-0.3c0.6-0.4-0.2-0.8-0.1-1.3C18 9.2 18.4 9 18.7 8.9c0.5 0 0.8 0.5 0.8 1c0 0.8-1.1 2-3.3 1.9 c-0.3 0-0.5 0-0.7-0.1L15 14.1c-0.4 1.7-0.9 4.1-2.6 6.2c-1.5 1.8-3.1 2.1-3.8 2.1c-1.3 0-2.1-0.6-2.2-1.6c0-0.9 0.8-1.4 1.3-1.4 c0.7 0 1.2 0.5 1.2 1.1c0 0.5-0.2 0.6-0.4 0.7c-0.1 0.1-0.3 0.2-0.3 0.4c0 0.1 0.1 0.3 0.4 0.3c0.5 0 0.9-0.3 1.2-0.5 c1.3-1 1.7-2.9 2.4-6.2l0.1-0.8c0.2-1.1 0.5-2.3 0.8-3.5c-0.9-0.7-1.4-1.5-2.6-1.8c-0.8-0.2-1.3 0-1.7 0.4C8.4 10 8.6 10.7 9 11.1 l0.7 0.7c0.8 0.9 1.3 1.7 1.1 2.7c-0.3 1.6-2.1 2.8-4.3 2.1c-1.9-0.6-2.2-1.9-2-2.7c0.2-0.6 0.7-0.8 1.2-0.6 c0.5 0.2 0.7 0.8 0.6 1.3c0 0.1 0 0.1-0.1 0.3C6 15 5.9 15.2 5.9 15.3c-0.1 0.4 0.4 0.7 0.8 0.8c0.8 0.3 1.7-0.2 1.9-0.9 c0.2-0.6-0.2-1.1-0.4-1.2l-0.8-0.9c-0.4-0.4-1.2-1.5-0.8-2.8c0.2-0.5 0.5-1 0.9-1.4c1-0.7 2-0.8 3-0.6c1.3 0.4 1.9 1.2 2.8 1.9 c0.5-1.3 1.1-2.6 2-3.8c0.9-1 2-1.7 3.3-1.8C20 4.8 21 5.4 21 6.3C21 6.7 20.8 7.5 20 7.5z"></path></svg>
+        </a>
+    </div>
+    <style>
+        .sf-minitoolbar {
+    display: none;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    padding: 5px 5px 0;
+
+    background-color: #f7f7f7;
+    background-image: -moz-linear-gradient(top, #e4e4e4, #ffffff);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e4e4e4), to(#ffffff));
+    background-image: -o-linear-gradient(top, #e4e4e4, #ffffff);
+    background: linear-gradient(top, #e4e4e4, #ffffff);
+
+    border-radius: 16px 0 0 0;
+
+    z-index: 6000000;
+}
+
+.sf-toolbarreset * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    vertical-align: baseline;
+}
+
+.sf-toolbarreset {
+    position: fixed;
+    background-color: #f7f7f7;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 40px 0 0;
+    z-index: 6000000;
+    font: 11px Verdana, Arial, sans-serif;
+    text-align: left;
+    color: #2f2f2f;
+
+    background-image: -moz-linear-gradient(top, #e4e4e4, #ffffff);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e4e4e4), to(#ffffff));
+    background-image: -o-linear-gradient(top, #e4e4e4, #ffffff);
+    background: linear-gradient(top, #e4e4e4, #ffffff);
+
+    bottom: 0;
+    border-top: 1px solid #bbb;
+}
+.sf-toolbarreset abbr {
+    border-bottom: 1px dotted #000000;
+    cursor: help;
+}
+.sf-toolbarreset span,
+.sf-toolbarreset div,
+.sf-toolbarreset td,
+.sf-toolbarreset th {
+    font-size: 11px;
+}
+.sf-toolbarreset img {
+    width: auto;
+    display: inline;
+}
+.sf-toolbarreset table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    table-layout: auto;
+}
+.sf-toolbarreset .hide-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAllBMVEXDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PExMTPz8/Q0NDR0dHT09Pb29vc3Nzf39/h4eHi4uLj4+P6+vr7+/v8/Pz9/f3///+Nh2QuAAAAIXRSTlMABgwPGBswMzk8QktRV4SKjZOWmaKlq7TAxszb3urt+fy1vNEpAAAAiklEQVQIHUXBBxKCQBREwRFzDqjoGh+C2YV//8u5Sll2S0E/dof1tKdKM6GyqCto7PjZRJIS/mbSELgXOSd/BzpKIH1ZefVWpDDTHsi8mZVnwImPi5ndCLbaAZk3M58Bay0h9VbeSvMpjDUAHj4jL55AW1rxN5fU2PLjIgVRzNdxVFOlGzvnJi0Fb1XNGBHA9uQOAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: 13px 11px;
+}
+
+.sf-toolbar-block {
+    white-space: nowrap;
+    color: #2f2f2f;
+    display: block;
+    min-height: 28px;
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    padding: 0;
+    float: left;
+    cursor: default;
+}
+
+.sf-toolbar-block span {
+    display: inline-block;
+}
+
+.sf-toolbar-block .sf-toolbar-info-piece {
+    line-height: 19px;
+    margin-bottom: 5px;
+}
+
+.sf-toolbar-block .sf-toolbar-info-piece .sf-toolbar-status {
+    padding: 0px 5px;
+    border-radius: 5px;
+    margin-bottom: 0px;
+    vertical-align: top;
+}
+
+.sf-toolbar-block .sf-toolbar-info-piece:last-child {
+    margin-bottom: 0;
+}
+
+.sf-toolbar-block .sf-toolbar-info-piece a,
+.sf-toolbar-block .sf-toolbar-info-piece abbr {
+    color: #2f2f2f;
+}
+
+.sf-toolbar-block .sf-toolbar-info-piece b {
+    display: inline-block;
+    min-width: 110px;
+    vertical-align: top;
+}
+
+.sf-toolbar-block .sf-toolbar-info-with-next-pointer:after {
+    content: ' :: ';
+    color: #999;
+}
+
+.sf-toolbar-block .sf-toolbar-info-with-delimiter {
+    border-right: 1px solid #999;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+.sf-toolbar-block .sf-toolbar-info {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    padding: 9px 0;
+    margin-left: -1px;
+
+    bottom: 38px;
+    border-bottom-width: 0;
+    border-bottom: 1px solid #bbb;
+    border-radius: 4px 4px 0 0;
+}
+
+.sf-toolbar-block .sf-toolbar-info:empty {
+    visibility: hidden;
+}
+
+.sf-toolbar-block .sf-toolbar-status {
+    display: inline-block;
+    color: #fff;
+    background-color: #666;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+    min-width: 6px;
+    min-height: 13px;
+}
+
+.sf-toolbar-block .sf-toolbar-status abbr {
+    color: #fff;
+    border-bottom: 1px dotted black;
+}
+
+.sf-toolbar-block .sf-toolbar-status-green {
+    background-color: #759e1a;
+}
+
+.sf-toolbar-block .sf-toolbar-status-red {
+    background-color: #a33;
+}
+
+.sf-toolbar-block .sf-toolbar-status-yellow {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+.sf-toolbar-block .sf-toolbar-status-black {
+    background-color: #000;
+}
+
+.sf-toolbar-block .sf-toolbar-icon {
+    display: block;
+}
+
+.sf-toolbar-block .sf-toolbar-icon > a,
+.sf-toolbar-block .sf-toolbar-icon > span {
+    display: block;
+    font-weight: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 5px 8px;
+    min-width: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sf-toolbar-block .sf-toolbar-icon > a,
+.sf-toolbar-block .sf-toolbar-icon > a:link
+.sf-toolbar-block .sf-toolbar-icon > a:hover {
+    color: black !important;
+}
+
+.sf-toolbar-block .sf-toolbar-icon > a[href]:after {
+    content: "";
+}
+
+.sf-toolbar-block .sf-toolbar-icon img, .sf-toolbar-block .sf-toolbar-icon svg {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+.sf-toolbar-block .sf-toolbar-icon img + span, .sf-toolbar-block .sf-toolbar-icon svg + span {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.sf-toolbar-block .sf-toolbar-icon .sf-toolbar-status {
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    margin-top: 0;
+}
+
+.sf-toolbar-block .sf-toolbar-info-method {
+    border-bottom: 1px dashed #ccc;
+    cursor: help;
+}
+
+.sf-toolbar-block .sf-toolbar-info-method[onclick=""] {
+    border-bottom: none;
+    cursor: inherit;
+}
+
+.sf-toolbar-info-php {}
+.sf-toolbar-info-php-ext {}
+
+.sf-toolbar-info-php-ext .sf-toolbar-status {
+    margin-left: 2px;
+}
+
+.sf-toolbar-info-php-ext .sf-toolbar-status:first-child {
+    margin-left: 0;
+}
+
+.sf-toolbar-block a .sf-toolbar-info-piece-additional,
+.sf-toolbar-block a .sf-toolbar-info-piece-additional-detail {
+    display: inline-block;
+}
+
+.sf-toolbar-block a .sf-toolbar-info-piece-additional:empty,
+.sf-toolbar-block a .sf-toolbar-info-piece-additional-detail:empty {
+    display: none;
+}
+
+.sf-toolbarreset:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px;
+}
+
+.sf-toolbar-block:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0 0 5px;
+    border-right: none;
+    margin-right: 1px;
+    position: relative;
+}
+
+.sf-toolbar-block:hover .sf-toolbar-icon {
+    background-color: #fff;
+    border-top: 1px dotted #DDD;
+    position: relative;
+    margin-top: -1px;
+    z-index: 10002;
+}
+
+.sf-toolbar-block:hover .sf-toolbar-info {
+    display: block;
+    min-width: -webkit-calc(100% + 2px);
+    min-width: calc(100% + 2px);
+    z-index: 10001;
+    box-sizing: border-box;
+    padding: 9px;
+    line-height: 19px;
+
+    max-width: 480px;
+    max-height: 480px;
+    word-wrap: break-word;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.sf-toolbar-ajax-requests th, .sf-toolbar-ajax-requests td {
+    border-bottom: 1px solid #ddd;
+    padding: 0 4px;
+    color: #2f2f2f;
+    background-color: #fff;
+}
+.sf-toolbar-ajax-requests th {
+    background-color: #eee;
+}
+.sf-ajax-request-url {
+    max-width: 300px;
+    line-height: 9px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sf-ajax-request-duration {
+    text-align: right;
+}
+.sf-ajax-request-error {
+    color: #a33 !important;
+}
+.sf-ajax-request-loading {
+    -webkit-animation: sf-blink .5s ease-in-out infinite;
+    -o-animation: sf-blink .5s ease-in-out infinite;
+    -moz-animation: sf-blink .5s ease-in-out infinite;
+    animation: sf-blink .5s ease-in-out infinite;
+}
+@-webkit-keyframes sf-blink {
+    0% { color: black; }
+    50% { color: #bbb; }
+    100% { color: black; }
+}
+@-moz-keyframes sf-blink {
+    0% { color: black; }
+    50% { color: #bbb; }
+    100% { color: black; }
+}
+@-o-keyframes sf-blink {
+    0% { color: black; }
+    50% { color: #bbb; }
+    100% { color: black; }
+}
+@keyframes sf-blink {
+    0% { color: black; }
+    50% { color: #bbb; }
+    100% { color: black; }
+}
+
+/***** Override the setting when the toolbar is on the top *****/
+
+
+/***** Media query *****/
+@media screen and (max-width: 779px) {
+    .sf-toolbar-block .sf-toolbar-icon > * > :first-child ~ * {
+        display: none;
+    }
+
+    .sf-toolbar-block .sf-toolbar-icon > * > .sf-toolbar-info-piece-additional,
+    .sf-toolbar-block .sf-toolbar-icon > * > .sf-toolbar-info-piece-additional-detail {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    .sf-toolbar-block .sf-toolbar-icon a[href$="config"] .sf-toolbar-info-piece-additional {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .sf-toolbar-block .sf-toolbar-icon a[href$="security"] .sf-toolbar-info-piece-additional {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1179px) {
+    .sf-toolbar-block .sf-toolbar-icon > * > .sf-toolbar-info-piece-additional {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .sf-toolbar-block .sf-toolbar-icon > * > .sf-toolbar-info-piece-additional-detail {
+        display: none;
+    }
+}
+
+/***** Media query print: Do not print the Toolbar. *****/
+@media print {
+    .sf-toolbar {
+        display: none;
+        visibility: hidden;
+    }
+}
+    </style>
+    <div id="sfToolbarClearer-4c31d9" style="clear: both; height: 38px; display: block;"></div>
+
+<div id="sfToolbarMainContent-4c31d9" class="sf-toolbarreset clear-fix" data-no-turbolink="" style="display: block;">
+                            <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="https://symfony.com/">
+            <svg width="26" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 26 28" enable-background="new 0 0 26 28" xml:space="preserve"><path fill="#010202" d="M13 0C5.8 0 0 5.8 0 13c0 7.2 5.8 13 13 13c7.2 0 13-5.8 13-13C26 5.8 20.2 0 13 0z M20 7.5 c-0.6 0-1-0.3-1-0.9c0-0.2 0-0.4 0.2-0.6c0.1-0.3 0.2-0.3 0.2-0.4c0-0.3-0.5-0.4-0.7-0.4c-2 0.1-2.5 2.7-2.9 4.8l-0.2 1.1 c1.1 0.2 1.9 0 2.4-0.3c0.6-0.4-0.2-0.8-0.1-1.3C18 9.2 18.4 9 18.7 8.9c0.5 0 0.8 0.5 0.8 1c0 0.8-1.1 2-3.3 1.9 c-0.3 0-0.5 0-0.7-0.1L15 14.1c-0.4 1.7-0.9 4.1-2.6 6.2c-1.5 1.8-3.1 2.1-3.8 2.1c-1.3 0-2.1-0.6-2.2-1.6c0-0.9 0.8-1.4 1.3-1.4 c0.7 0 1.2 0.5 1.2 1.1c0 0.5-0.2 0.6-0.4 0.7c-0.1 0.1-0.3 0.2-0.3 0.4c0 0.1 0.1 0.3 0.4 0.3c0.5 0 0.9-0.3 1.2-0.5 c1.3-1 1.7-2.9 2.4-6.2l0.1-0.8c0.2-1.1 0.5-2.3 0.8-3.5c-0.9-0.7-1.4-1.5-2.6-1.8c-0.8-0.2-1.3 0-1.7 0.4C8.4 10 8.6 10.7 9 11.1 l0.7 0.7c0.8 0.9 1.3 1.7 1.1 2.7c-0.3 1.6-2.1 2.8-4.3 2.1c-1.9-0.6-2.2-1.9-2-2.7c0.2-0.6 0.7-0.8 1.2-0.6 c0.5 0.2 0.7 0.8 0.6 1.3c0 0.1 0 0.1-0.1 0.3C6 15 5.9 15.2 5.9 15.3c-0.1 0.4 0.4 0.7 0.8 0.8c0.8 0.3 1.7-0.2 1.9-0.9 c0.2-0.6-0.2-1.1-0.4-1.2l-0.8-0.9c-0.4-0.4-1.2-1.5-0.8-2.8c0.2-0.5 0.5-1 0.9-1.4c1-0.7 2-0.8 3-0.6c1.3 0.4 1.9 1.2 2.8 1.9 c0.5-1.3 1.1-2.6 2-3.8c0.9-1 2-1.7 3.3-1.8C20 4.8 21 5.4 21 6.3C21 6.7 20.8 7.5 20 7.5z"></path></svg>
+            <span>
+                                    <span class="sf-toolbar-status sf-toolbar-status-green">2.7.3</span>
+                            </span>
+        </a>
+    </div>
+     <div class="sf-toolbar-info">                <div class="sf-toolbar-info-piece">
+            Symfony <b>2.7.3</b>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <a href="https://symfony.com/doc/2.7.3/index.html" rel="help">Symfony Documentation</a>
+        </div>
+    </div>
+</div>
+
+                <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/phpinfo">
+            <svg width="26" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 26 28" enable-background="new 0 0 26 28" xml:space="preserve"><g><path fill="#010202" d="M8 11.5c-0.2-0.1-0.4-0.1-0.7-0.1s-0.5 0-0.8 0c0 0-0.1 0-0.1 0c0 0-0.1 0-0.1 0c0 0-0.1 0-0.1 0 c0 0-0.1 0-0.1 0v0l-0.9 3.3c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0.1 0c0 0 0.1 0 0.1 0c0.3 0 0.7 0 1 0 c0.3 0 0.6-0.1 0.8-0.2c0.2-0.1 0.4-0.3 0.6-0.5c0.2-0.3 0.3-0.6 0.4-1.1c0.1-0.4 0.1-0.7 0.1-0.9C8.3 11.7 8.1 11.6 8 11.5z"></path><path fill="#010202" d="M21.3 11.5c-0.2-0.1-0.4-0.1-0.7-0.1s-0.5 0-0.8 0c0 0-0.1 0-0.1 0c0 0-0.1 0-0.1 0c0 0-0.1 0-0.1 0 s-0.1 0-0.1 0v0l-0.9 3.3c0 0 0 0 0 0c0 0 0 0 0 0c0 0 0 0 0 0s0 0 0 0c0 0 0 0 0.1 0c0 0 0.1 0 0.1 0c0.3 0 0.7 0 1 0 c0.3 0 0.6-0.1 0.8-0.2c0.2-0.1 0.4-0.3 0.6-0.5c0.2-0.3 0.3-0.6 0.4-1.1c0.1-0.4 0.1-0.7 0.1-0.9C21.6 11.7 21.5 11.6 21.3 11.5z"></path><path fill="#010202" d="M13 0C5.8 0 0 5.8 0 13c0 7.2 5.8 13 13 13c7.2 0 13-5.8 13-13C26 5.8 20.2 0 13 0z M9.8 12.9 c0 0.2-0.1 0.4-0.2 0.6c-0.1 0.2-0.2 0.4-0.2 0.6c-0.1 0.2-0.2 0.4-0.3 0.5S8.8 14.9 8.7 15c-0.2 0.2-0.4 0.3-0.6 0.5 c-0.2 0.1-0.4 0.2-0.6 0.3c-0.2 0.1-0.4 0.1-0.6 0.1c-0.2 0-0.4 0-0.7 0H4.8L4.2 18H2.7l2.1-7.9h2.9c0.4 0 0.8 0.1 1.1 0.2 c0.3 0.1 0.5 0.3 0.7 0.6c0.2 0.2 0.3 0.5 0.3 0.9C10 12.1 9.9 12.4 9.8 12.9z M13.7 15.9l0.9-3.5c0.1-0.2 0.1-0.3 0.1-0.5 c0-0.1 0-0.2-0.1-0.3c-0.1-0.1-0.2-0.1-0.3-0.2c-0.1 0-0.3-0.1-0.5-0.1l-1.2 0l-1.2 4.5H10L12.1 8h1.5l-0.6 2.1h1.4 c0.4 0 0.7 0 1 0.1s0.5 0.2 0.7 0.3c0.2 0.1 0.3 0.4 0.3 0.6c0 0.3 0 0.6-0.1 1l-1 3.7H13.7z M23 13.4c-0.1 0.2-0.2 0.4-0.2 0.6 c-0.1 0.2-0.2 0.4-0.3 0.5S22.2 14.9 22 15c-0.2 0.2-0.4 0.3-0.6 0.5c-0.2 0.1-0.4 0.2-0.6 0.3c-0.2 0.1-0.4 0.1-0.6 0.1 c-0.2 0-0.4 0-0.7 0h-1.3L17.6 18h-1.5l2.1-7.9h2.9c0.4 0 0.8 0.1 1.1 0.2c0.3 0.1 0.5 0.3 0.7 0.6c0.2 0.2 0.3 0.5 0.3 0.9 c0 0.3 0 0.7-0.1 1.1C23.1 13.1 23.1 13.3 23 13.4z"></path></g></svg>
+        </a>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece sf-toolbar-info-php"><b>PHP</b><span>5.5.1</span></div><div class="sf-toolbar-info-piece sf-toolbar-info-php-ext"><b>PHP Extensions</b><span class="sf-toolbar-status sf-toolbar-status-red">xdebug</span><span class="sf-toolbar-status sf-toolbar-status-red">accel</span></div><div class="sf-toolbar-info-piece"><b>PHP SAPI</b><span>apache2handler</span></div>    </div>
+</div>
+
+                        <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=config">        <svg width="21" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 21 28" enable-background="new 0 0 21 28" xml:space="preserve"><g><path fill="#3F3F3F" d="M5 17H1c-0.5 0-1-0.4-1-1V9c0-0.5 0.4-1 1-1h4c0.5 0 1 0.4 1 1v7C6 16.6 5.6 17 5 17z"></path><path fill="#3F3F3F" d="M19 17h-4c-0.5 0-1-0.4-1-1V9c0-0.5 0.4-1 1-1h4c0.5 0 1 0.4 1 1v7C20 16.6 19.6 17 19 17z"></path><path fill="#3F3F3F" d="M12.1 20h-4c-0.5 0-1-0.4-1-1v-7c0-0.5 0.4-1 1-1h4c0.5 0 1 0.4 1 1v7C13.1 19.5 12.6 20 12.1 20z"></path><rect x="9.1" y="5.8" fill="#3F3F3F" width="2" height="4.5"></rect><rect x="16" y="17.7" fill="#3F3F3F" width="2" height="4.5"></rect><rect x="2.1" y="17.7" fill="#3F3F3F" width="2" height="4.5"></rect><rect x="9.1" y="20.7" fill="#3F3F3F" width="2" height="1.5"></rect><rect x="2.1" y="5.7" fill="#3F3F3F" width="2" height="1.5"></rect><rect x="16.1" y="5.7" fill="#3F3F3F" width="2" height="1.5"></rect></g></svg>
+        <span class="sf-toolbar-info-piece-additional-detail sf-toolbar-status sf-toolbar-status-green"> </span>
+        <span class="sf-toolbar-info-piece-additional sf-toolbar-status">4c31d9</span>
+                    <span class="sf-toolbar-info-piece-additional-detail">
+                <span class="sf-toolbar-info-with-delimiter">app</span>
+                <span>dev</span>
+            </span>
+            </a>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece"><b>Name</b><span>app</span></div><div class="sf-toolbar-info-piece"><b>Environment</b><span>dev</span></div><div class="sf-toolbar-info-piece"><b>Token</b><span><a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9">4c31d9</a></span></div>    </div>
+</div>
+
+                                        <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=request">        <svg width="28" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><path fill="#3F3F3F" d="M19.5 18c0 0.2 0 0.5 0.1 0.8c-0.8 0.7-1.2 1.2-1.3 1.3c0 0 0 0.1 0 0.1c0.7 1 1.1 1.4 1.1 1.4 c0.1 0 0.3-0.1 0.8-0.3c0.4-0.2 0.8-0.4 0.9-0.5c0.1 0.1 0.3 0.1 0.3 0.2c0.1 0 0.2 0.1 0.4 0.1c0 0.2 0.1 0.6 0.3 1 c0.1 0.5 0.2 0.7 0.3 0.8c0 0 0.6-0.1 1.8-0.2c0 0 0.1 0 0.1-0.1c0.1-0.2 0.1-0.8 0.1-1.9c0.2-0.1 0.4-0.3 0.6-0.5 c1.2 0.4 1.8 0.5 1.9 0.4l0.7-1.6l0 0c0.1-0.1-0.5-0.5-1.6-1.1c0-0.3 0-0.5-0.1-0.8c0.8-0.7 1.2-1.2 1.3-1.3c0 0 0-0.1 0-0.1 c-0.7-0.9-1.1-1.4-1.1-1.4l-0.1 0c-0.5 0.2-1 0.5-1.6 0.8c-0.1-0.1-0.3-0.1-0.3-0.2c-0.1 0-0.2-0.1-0.4-0.1c0-0.2-0.1-0.6-0.3-1 c-0.1-0.5-0.2-0.7-0.3-0.8c0 0-0.2 0-0.4 0c-0.3 0-0.6 0.1-0.9 0.1c-0.3 0-0.5 0.1-0.5 0.1c0 0-0.1 0-0.1 0.1 c-0.1 0.2-0.1 0.8-0.1 1.9c-0.2 0.1-0.4 0.3-0.6 0.5c-1.2-0.4-1.8-0.5-1.9-0.4l-0.7 1.6C17.9 17 18.4 17.4 19.5 18z M22.2 16.5 c0.4-0.2 0.8-0.2 1.2 0c0.4 0.2 0.7 0.5 0.9 0.9c0.2 0.4 0.2 0.8 0 1.2c-0.2 0.4-0.5 0.7-0.9 0.9c-0.4 0.2-0.8 0.2-1.2 0 c-0.4-0.2-0.7-0.5-0.9-0.9c-0.2-0.4-0.2-0.8 0-1.2C21.4 17 21.7 16.7 22.2 16.5z"></path><path fill="#3F3F3F" d="M18.9 11.2c0-0.1 0-0.2-0.1-0.3c-0.1-0.1-0.2-0.1-0.3-0.2l-2.2-0.3c-0.1-0.3-0.3-0.7-0.5-1.2 C16 9 16.2 8.7 16.5 8.3s0.5-0.6 0.6-0.8c0.1-0.1 0.1-0.2 0.1-0.3c0-0.3-0.7-1.1-2.1-2.4c-0.1-0.1-0.2-0.1-0.3-0.1 c-0.1 0-0.2 0-0.3 0.1l-1.7 1.3c-0.4-0.2-0.8-0.4-1.1-0.5l-0.3-2.3c0-0.1-0.1-0.2-0.1-0.3C11 3.1 10.9 3 10.8 3H8.1 C7.9 3 7.7 3.2 7.6 3.4C7.5 3.9 7.4 4.6 7.3 5.7C6.9 5.8 6.5 6 6.2 6.2L4.5 4.8C4.4 4.8 4.3 4.7 4.2 4.7C4 4.7 3.6 5 3 5.6 c-0.6 0.6-1 1-1.2 1.3C1.7 7 1.7 7.1 1.7 7.2c0 0.1 0 0.2 0.1 0.3c0.6 0.7 1 1.2 1.3 1.7C2.9 9.6 2.7 10 2.6 10.3l-2.3 0.4 c-0.1 0-0.2 0.1-0.2 0.2C0 10.9 0 11 0 11.1v2.7c0 0.1 0 0.2 0.1 0.3c0.1 0.1 0.2 0.1 0.3 0.1l2.2 0.4c0.1 0.4 0.3 0.8 0.5 1.2 c-0.2 0.2-0.4 0.5-0.7 0.9c-0.3 0.4-0.5 0.6-0.6 0.8c-0.1 0.1-0.1 0.2-0.1 0.3c0 0.3 0.7 1.1 2.1 2.4c0.1 0.1 0.2 0.1 0.3 0.1 c0.1 0 0.2 0 0.3-0.1l1.7-1.3c0.4 0.2 0.8 0.4 1.1 0.5l0.3 2.3c0 0.1 0.1 0.2 0.1 0.3C7.9 21.9 8 22 8.1 22h2.8 c0.2 0 0.4-0.1 0.4-0.4c0.1-0.5 0.2-1.2 0.3-2.3c0.4-0.1 0.8-0.3 1.1-0.5l1.7 1.3c0.1 0.1 0.2 0.1 0.3 0.1c0.2 0 0.6-0.3 1.2-0.9 c0.6-0.6 1-1 1.2-1.3c0.1-0.1 0.1-0.2 0.1-0.3c0-0.1 0-0.2-0.1-0.3c-0.6-0.7-1-1.2-1.3-1.7c0.2-0.4 0.4-0.8 0.5-1.1l2.3-0.4 c0.1 0 0.2-0.1 0.2-0.2c0.1-0.1 0.1-0.2 0.1-0.3L18.9 11.2L18.9 11.2z M12.1 15.2c-0.7 0.7-1.6 1.1-2.7 1.1s-1.9-0.4-2.7-1.1 c-0.7-0.7-1.1-1.6-1.1-2.7S6 10.6 6.8 9.8c0.7-0.7 1.6-1.1 2.7-1.1s1.9 0.4 2.7 1.1c0.7 0.7 1.1 1.6 1.1 2.7S12.9 14.4 12.1 15.2z"></path><circle fill="#3F3F3F" cx="9.5" cy="12.5" r="2"></circle></svg>
+        <span class="sf-toolbar-status sf-toolbar-status-green" title="OK">200</span>
+        <span class="sf-toolbar-status sf-toolbar-info-piece-additional">                                                <span class="sf-toolbar-info-class sf-toolbar-info-with-next-pointer"><abbr title="Hes\Bundle\IndiaBundle\Controller\DefaultController">DefaultController</abbr></span>
+                <span class="sf-toolbar-info-method">
+                    homepageAction
+                </span>
+                        </span>
+        <span class="sf-toolbar-info-piece-additional-detail">on <i>hes_welcome-page</i></span>
+    </a>
+    </div>
+     <div class="sf-toolbar-info" style="left: 0px;">        <div class="sf-toolbar-info-piece"><b>Status</b><span class="sf-toolbar-status sf-toolbar-status-green">200</span> OK
+            </div><div class="sf-toolbar-info-piece"><b>Controller</b><span class="sf-toolbar-info-class sf-toolbar-info-with-next-pointer"><abbr title="Hes\Bundle\IndiaBundle\Controller\DefaultController">DefaultController</abbr></span><span class="sf-toolbar-info-method">
+                    homepageAction
+                </span></div><div class="sf-toolbar-info-piece"><b>Route name</b><span>hes_welcome-page</span></div><div class="sf-toolbar-info-piece"><b>Has session</b><span>no</span></div>    </div>
+</div>
+
+                        <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <span>
+            <svg width="24" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 24 28" enable-background="new 0 0 24 28" xml:space="preserve"><polygon fill="#3F3F3F" points="18.4,3.8 12.8,9.4 16.3,9.4 16.3,21.1 14.1,21.1 9.9,25.3 16.3,25.3 20.5,25.3 20.5,21.1 20.5,9.4 23.9,9.4"></polygon><polygon fill="#3F3F3F" points="5.6,25.3 11.2,19.7 7.7,19.7 7.7,8 9.9,8 14.1,3.8 7.7,3.8 3.5,3.8 3.5,8 3.5,19.7 0.1,19.7"></polygon></svg>
+            <span class="sf-toolbar-ajax-requests sf-toolbar-status sf-toolbar-status-green">0</span>
+        </span>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece">
+            <b>AJAX requests</b>
+            <span class="sf-toolbar-ajax-info"></span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <table class="sf-toolbar-ajax-requests">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>URL</th>
+                        <th>Time</th>
+                        <th>Profile</th>
+                    </tr>
+                </thead>
+                <tbody class="sf-toolbar-ajax-request-list"><tr><td colspan="4">No AJAX requests yet.</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            
+            
+                
+                                <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=time">        <svg width="16" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 16 28" enable-background="new 0 0 16 28" xml:space="preserve"><rect x="6" y="4" fill="#3F3F3F" width="4" height="2"></rect><path fill="#3F3F3F" d="M8 7c-4.4 0-8 3.6-8 8s3.6 8 8 8s8-3.6 8-8S12.4 7 8 7z M12 16H9H7v-6h2v4h3V16z"></path></svg>
+        <span>2126 ms</span>
+    </a>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece">
+            <b>Total time</b>
+            <span>2126 ms</span>
+        </div>
+    </div>
+</div>
+
+                        <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <span>
+            <svg width="13" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 13 28" enable-background="new 0 0 13 28" xml:space="preserve"><g><rect x="3" y="11" fill="#BCBCBB" width="7" height="9"></rect></g><g><path fill="#3F3F3F" d="M11 6V21H2V6H0V22c0 0.6 0.4 1 1 1h11c0.6 0 1-0.4 1-1V6H11z"></path></g></svg>
+            <span>11.2 MB</span>
+        </span>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece">
+            <b>Memory usage</b>
+            <span>11.2 / 128.0 MB</span>
+        </div>
+    </div>
+</div>
+
+            
+                        
+            <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=form">            <svg width="20" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 20 28" enable-background="new 0 0 20 28" xml:space="preserve"><g><polygon fill="#3F3F3F" points="16,5 13,5 13,3 7,3 7,5 4,5 4,9 16,9"></polygon><path fill="#3F3F3F" d="M17 6v4H3V6H0v19h20V6H17z M8 22H3v-1h5V22z M17 20H3v-1h14V20z M17 18H3v-1h14V18z M17 16H3v-1h14V16z M17 14H4v-1h13V14z"></path></g></svg>
+            <span class="sf-toolbar-status sf-toolbar-status-green">0</span>
+        </a>
+    </div>
+     <div class="sf-toolbar-info"></div>
+</div>
+    
+                                <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=twig">        <img height="28" alt="Twig" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAcCAYAAACOGPReAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbElEQVRIx2NgGAXUBowMDAwMaWlp/6ll4KxZsxhZYJy0tDRqGMjAwMDAwEQL77OgCxSXlJBsSG9PDwqfJi6lj/fRvTJ4XYocUTBXE4q8oRtRRBnKwsw8RFw6fA0lKkd1dnYOIpfCCthRMIIAAI0IFu9Hxh7ZAAAAAElFTkSuQmCC">
+        <span class="sf-toolbar-status">1186 ms</span>
+    </a>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece">
+            <b>Render Time</b>
+            <span>1186 ms</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Template Calls</b>
+            <span>6</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Block Calls</b>
+            <span>0</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Macro Calls</b>
+            <span>0</span>
+        </div>
+    </div>
+</div>
+
+                                                            <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=security">        <svg width="24" height="28" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 24 28" enable-background="new 0 0 24 28" xml:space="preserve"><g><path fill="#3F3F3F" d="M8.6 14.6c0-0.4 0-0.6 0-0.9c0.2-0.1 0.5-0.6 0.5-1.1c0.1 0 0.3-0.1 0.4-0.6c0-0.3-0.1-0.4-0.2-0.5 c0.2-0.6 0.6-2.6-0.8-2.8C8.4 8.4 8 8.3 7.5 8.3c-2 0-2.2 1.5-1.8 3.2c-0.1 0-0.2 0.2-0.2 0.5c0.1 0.5 0.3 0.6 0.4 0.6 c0 0.5 0.4 1 0.5 1.1c0 0.3 0 0.6 0 0.9c-0.4 1.1-3 0.8-3.2 2.8h8.5C11.7 15.3 9 15.6 8.6 14.6z"></path><path fill="#3F3F3F" d="M18 10.7c-0.2 0-0.4 0-0.5 0.1c-0.2 0.1-0.3 0.2-0.5 0.5c-0.2 0.2-0.3 0.5-0.4 0.8s-0.1 0.6-0.1 0.8 c0 0.4 0.1 0.7 0.3 0.9c0.2 0.2 0.4 0.3 0.6 0.3c0.2 0 0.3 0 0.5-0.1c0.2-0.1 0.3-0.2 0.5-0.4c0.2-0.2 0.3-0.4 0.4-0.7 c0.1-0.3 0.2-0.6 0.2-0.9c0-0.4-0.1-0.7-0.3-0.9C18.5 10.8 18.2 10.7 18 10.7z"></path><path fill="#3F3F3F" d="M22.2 6H1.8C1.3 6 1 6.3 1 6.8v14.4c0 0.4 0.3 0.8 0.8 0.8h3.8v-0.8c-0.4 0-0.8-0.3-0.8-0.8 c0-0.4 0.3-0.8 0.8-0.8h1.5c0.4 0 0.8 0.3 0.8 0.8c0 0.4-0.3 0.8-0.8 0.8v0.8h9.9v-0.8c-0.4 0-0.8-0.3-0.8-0.8 c0-0.4 0.3-0.8 0.8-0.8h1.5c0.4 0 0.8 0.3 0.8 0.8c0 0.4-0.3 0.8-0.8 0.8v0.8h3.8c0.4 0 0.8-0.3 0.8-0.8V6.8C23 6.3 22.7 6 22.2 6z M12.4 17.4c0 0.4-0.3 0.8-0.8 0.8H3.3c-0.4 0-0.8-0.3-0.8-0.8V8.3c0-0.4 0.3-0.8 0.8-0.8h8.3c0.4 0 0.8 0.3 0.8 0.8V17.4z M21.4 15.6c-0.4 0.3-0.8 0.6-1.3 0.7c-0.5 0.2-1.1 0.3-1.8 0.3c-0.6 0-1.2-0.1-1.8-0.2c-0.5-0.2-1-0.4-1.4-0.7 c-0.4-0.3-0.7-0.7-0.9-1.1c-0.2-0.5-0.4-1.1-0.4-1.8c0-0.7 0.1-1.4 0.4-2c0.4-0.8 0.9-1.4 1.5-1.8c0.6-0.4 1.4-0.6 2.4-0.6 c0.7 0 1.4 0.1 1.9 0.4c0.6 0.3 1 0.7 1.3 1.3c0.3 0.5 0.4 1 0.4 1.6c0 0.8-0.3 1.6-0.9 2.2c-0.5 0.6-1.1 0.9-1.7 0.9 c-0.2 0-0.4 0-0.5-0.1c-0.1-0.1-0.2-0.1-0.3-0.3c0-0.1-0.1-0.2-0.1-0.4c-0.2 0.2-0.4 0.4-0.6 0.5c-0.2 0.1-0.5 0.2-0.7 0.2 c-0.3 0-0.5-0.1-0.7-0.2c-0.2-0.1-0.4-0.4-0.6-0.7c-0.2-0.3-0.2-0.7-0.2-1c0-0.5 0.1-0.9 0.4-1.4c0.2-0.5 0.5-0.8 0.9-1 c0.3-0.2 0.7-0.3 1-0.3c0.3 0 0.5 0.1 0.7 0.2c0.2 0.1 0.4 0.3 0.6 0.6l0.1-0.7h0.8l-0.6 2.9c-0.1 0.4-0.1 0.6-0.1 0.7 c0 0.1 0 0.1 0.1 0.2c0.1 0.1 0.1 0.1 0.2 0.1c0.2 0 0.4-0.1 0.6-0.3c0.3-0.2 0.6-0.5 0.8-0.9c0.2-0.4 0.3-0.8 0.3-1.2 c0-0.5-0.1-0.9-0.4-1.3c-0.2-0.4-0.6-0.8-1.1-1s-1-0.4-1.6-0.4c-0.7 0-1.3 0.2-1.8 0.5c-0.6 0.3-1 0.8-1.3 1.4 c-0.3 0.6-0.5 1.2-0.5 1.9c0 0.7 0.2 1.3 0.5 1.8c0.3 0.5 0.8 0.9 1.3 1.1c0.6 0.2 1.2 0.4 1.9 0.4c0.8 0 1.4-0.1 1.9-0.4 c0.5-0.3 0.9-0.6 1.1-0.9h0.8C22 14.9 21.8 15.3 21.4 15.6z"></path></g></svg>
+        <span class="sf-toolbar-status sf-toolbar-status-green"></span>
+        <div class="sf-toolbar-status sf-toolbar-info-piece-additional">anon.</div>    </a>
+    </div>
+     <div class="sf-toolbar-info">                    <div class="sf-toolbar-info-piece">
+                <b>Logged in as</b>
+                <span class="sf-toolbar-status sf-toolbar-status-green">anon.</span>
+            </div>
+            <div class="sf-toolbar-info-piece">
+                <b>Authenticated</b>
+                <span class="sf-toolbar-status sf-toolbar-status-green">Yes</span>
+            </div>
+                        <div class="sf-toolbar-info-piece">
+                <b>Token class</b>
+                <abbr title="Symfony\Component\Security\Core\Authentication\Token\AnonymousToken">AnonymousToken</abbr>
+            </div>
+                        </div>
+</div>
+
+                
+                            <div class="sf-toolbar-block">
+     <div class="sf-toolbar-icon">        <a href="http://localhost/hesindia/web/app_dev.php/_profiler/4c31d9?panel=db">        <img width="20" height="28" alt="Database" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQRJREFUeNpi/P//PwM1ARMDlcGogZQDlpMnT7pxc3NbA9nhQKxOpL5rQLwJiPeBsI6Ozl+YBOOOHTv+AOllQNwtLS39F2owKYZ/gRq8G4i3ggxEToggWzvc3d2Pk+1lNL4fFAs6ODi8JzdS7mMRVyDVoAMHDsANdAPiOCC+jCQvQKqBQB/BDbwBxK5AHA3E/kB8nKJkA8TMQBwLxaBIKQbi70AvTADSBiSadwFXpCikpKQU8PDwkGTaly9fHFigkaKIJid4584dkiMFFI6jkTJII0WVmpHCAixZQEXWYhDeuXMnyLsVlEQKI45qFBQZ8eRECi4DBaAlDqle/8A48ip6gAADANdQY88Uc0oGAAAAAElFTkSuQmCC">
+        <span class="sf-toolbar-status">0</span>
+                            </a>
+    </div>
+     <div class="sf-toolbar-info">        <div class="sf-toolbar-info-piece">
+            <b>DB Queries</b>
+            <span>0</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Query time</b>
+            <span>0.00 ms</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Invalid entities</b>
+            <span class="sf-toolbar-status sf-toolbar-status-green">0</span>
+        </div>
+            </div>
+</div>
+
+                
+    
+    
+            <a class="hide-button" title="Close Toolbar" onclick="
+            var p = this.parentNode;
+            p.style.display = &#39;none&#39;;
+            (p.previousElementSibling || p.previousSibling).style.display = &#39;none&#39;;
+            document.getElementById(&#39;sfMiniToolbar-4c31d9&#39;).style.display = &#39;block&#39;;
+            Sfjs.setPreference(&#39;toolbar/displayState&#39;, &#39;none&#39;);
+        "></a>
+    </div>
+<!-- END of Symfony Web Debug Toolbar -->
+</div><script>/*<![CDATA[*/    Sfjs = (function() {        "use strict";        var noop = function() {},            collectionToArray = function (collection) {                var length = collection.length || 0,                    results = new Array(length);                while (length--) {                    results[length] = collection[length];                }                return results;            },            profilerStorageKey = 'sf2/profiler/',            request = function(url, onSuccess, onError, payload, options) {                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');                options = options || {};                options.maxTries = options.maxTries || 0;                xhr.open(options.method || 'GET', url, true);                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');                xhr.onreadystatechange = function(state) {                    if (4 !== xhr.readyState) {                        return null;                    }                    if (xhr.status == 404 && options.maxTries > 1) {                        setTimeout(function(){                            options.maxTries--;                            request(url, onSuccess, onError, payload, options);                        }, 500);                        return null;                    }                    if (200 === xhr.status) {                        (onSuccess || noop)(xhr);                    } else {                        (onError || noop)(xhr);                    }                };                xhr.send(payload || '');            },            hasClass = function(el, klass) {                return el.className && el.className.match(new RegExp('\\b' + klass + '\\b'));            },            removeClass = function(el, klass) {                if (el.className) {                    el.className = el.className.replace(new RegExp('\\b' + klass + '\\b'), ' ');                }            },            addClass = function(el, klass) {                if (!hasClass(el, klass)) {                    el.className += " " + klass;                }            },            getPreference = function(name) {                if (!window.localStorage) {                    return null;                }                return localStorage.getItem(profilerStorageKey + name);            },            setPreference = function(name, value) {                if (!window.localStorage) {                    return null;                }                localStorage.setItem(profilerStorageKey + name, value);            },            requestStack = [],            renderAjaxRequests = function() {                var requestCounter = document.querySelectorAll('.sf-toolbar-ajax-requests');                if (!requestCounter.length) {                    return;                }                var tbodies = document.querySelectorAll('.sf-toolbar-ajax-request-list');                var state = 'ok';                if (tbodies.length) {                    var tbody = tbodies[0];                    var rows = document.createDocumentFragment();                    if (requestStack.length) {                        for (var i = 0; i < requestStack.length; i++) {                            var request = requestStack[i];                            var row = document.createElement('tr');                            rows.appendChild(row);                            var methodCell = document.createElement('td');                            if (request.error) {                                methodCell.className = 'sf-ajax-request-error';                            }                            methodCell.textContent = request.method;                            row.appendChild(methodCell);                            var pathCell = document.createElement('td');                            pathCell.className = 'sf-ajax-request-url';                            if ('GET' === request.method) {                                var pathLink = document.createElement('a');                                pathLink.setAttribute('href', request.url);                                pathLink.textContent = request.url;                                pathCell.appendChild(pathLink);                            } else {                                pathCell.textContent = request.url;                            }                            pathCell.setAttribute('title', request.url);                            row.appendChild(pathCell);                            var durationCell = document.createElement('td');                            durationCell.className = 'sf-ajax-request-duration';                            if (request.duration) {                                durationCell.textContent = request.duration + "ms";                            } else {                                durationCell.textContent = '-';                            }                            row.appendChild(durationCell);                            row.appendChild(document.createTextNode(' '));                            var profilerCell = document.createElement('td');                            if (request.profilerUrl) {                                var profilerLink = document.createElement('a');                                profilerLink.setAttribute('href', request.profilerUrl);                                profilerLink.textContent = request.profile;                                profilerCell.appendChild(profilerLink);                            } else {                                profilerCell.textContent = 'n/a';                            }                            row.appendChild(profilerCell);                            var requestState = 'ok';                            if (request.error) {                                requestState = 'error';                                if (state != "loading" && i > requestStack.length - 4) {                                    state = 'error';                                }                            } else if (request.loading) {                                requestState = 'loading';                                state = 'loading';                            }                            row.className = 'sf-ajax-request sf-ajax-request-' + requestState;                        }                        var infoSpan = document.querySelectorAll(".sf-toolbar-ajax-info")[0];                        var children = collectionToArray(tbody.children);                        for (var i = 0; i < children.length; i++) {                            tbody.removeChild(children[i]);                        }                        tbody.appendChild(rows);                        if (infoSpan) {                            var text = requestStack.length + ' call' + (requestStack.length > 1 ? 's' : '');                            infoSpan.textContent = text;                        }                    } else {                        var cell = document.createElement('td');                        cell.setAttribute('colspan', '4');                        cell.textContent = "No AJAX requests yet.";                        var row = document.createElement('tr');                        row.appendChild(cell);                        tbody.appendChild(row);                    }                }                requestCounter[0].textContent = requestStack.length;                var className = 'sf-toolbar-ajax-requests sf-toolbar-status';                if (state == 'ok') {                    className += ' sf-toolbar-status-green';                } else if (state == 'error') {                    className += ' sf-toolbar-status-red';                } else {                    className += ' sf-ajax-request-loading';                }                requestCounter[0].className = className;            };        var addEventListener;        var el = document.createElement('div');        if (!'addEventListener' in el) {            addEventListener = function (element, eventName, callback) {                element.attachEvent('on' + eventName, callback);            };        } else {            addEventListener = function (element, eventName, callback) {                element.addEventListener(eventName, callback, false);            };        }                    if (window.XMLHttpRequest && XMLHttpRequest.prototype.addEventListener) {                var proxied = XMLHttpRequest.prototype.open;                XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {                    var self = this;                    /* prevent logging AJAX calls to static and inline files, like templates */                    var path = url;                    if (url.substr(0, 1) === '/') {                        if (0 === url.indexOf('\x2Fhesindia\x2Fweb')) {                            path = url.substr(13);                        }                    }                    else if (0 === url.indexOf('http\x3A\x2F\x2Flocalhost\x2Fhesindia\x2Fweb')) {                        path = url.substr(29);                    }                    if (path.substr(0, 1) === '/' && !path.match(new RegExp("^\/(app(_[\\w]+)?\\.php\/)?_wdt"))) {                        var stackElement = {                            loading: true,                            error: false,                            url: url,                            method: method,                            start: new Date()                        };                        requestStack.push(stackElement);                        this.addEventListener('readystatechange', function() {                            if (self.readyState == 4) {                                stackElement.duration = new Date() - stackElement.start;                                stackElement.loading = false;                                stackElement.error = self.status < 200 || self.status >= 400;                                stackElement.profile = self.getResponseHeader("X-Debug-Token");                                stackElement.profilerUrl = self.getResponseHeader("X-Debug-Token-Link");                                Sfjs.renderAjaxRequests();                            }                        }, false);                        Sfjs.renderAjaxRequests();                    }                    proxied.apply(this, Array.prototype.slice.call(arguments));                };            }                return {            hasClass: hasClass,            removeClass: removeClass,            addClass: addClass,            getPreference: getPreference,            setPreference: setPreference,            addEventListener: addEventListener,            request: request,            renderAjaxRequests: renderAjaxRequests,            load: function(selector, url, onSuccess, onError, options) {                var el = document.getElementById(selector);                if (el && el.getAttribute('data-sfurl') !== url) {                    request(                        url,                        function(xhr) {                            el.innerHTML = xhr.responseText;                            el.setAttribute('data-sfurl', url);                            removeClass(el, 'loading');                            (onSuccess || noop)(xhr, el);                        },                        function(xhr) { (onError || noop)(xhr, el); },                        '',                        options                    );                }                return this;            },            toggle: function(selector, elOn, elOff) {                var tmp = elOn.style.display,                    el = document.getElementById(selector);                elOn.style.display = elOff.style.display;                elOff.style.display = tmp;                if (el) {                    el.style.display = 'none' === tmp ? 'none' : 'block';                }                return this;            }        }    })();/*]]>*/</script><script>/*<![CDATA[*/    (function () {                Sfjs.load(            'sfwdt4c31d9',            '/hesindia/web/app_dev.php/_wdt/4c31d9',            function(xhr, el) {                el.style.display = -1 !== xhr.responseText.indexOf('sf-toolbarreset') ? 'block' : 'none';                if (el.style.display == 'none') {                    return;                }                if (Sfjs.getPreference('toolbar/displayState') == 'none') {                    document.getElementById('sfToolbarMainContent-4c31d9').style.display = 'none';                    document.getElementById('sfToolbarClearer-4c31d9').style.display = 'none';                    document.getElementById('sfMiniToolbar-4c31d9').style.display = 'block';                } else {                    document.getElementById('sfToolbarMainContent-4c31d9').style.display = 'block';                    document.getElementById('sfToolbarClearer-4c31d9').style.display = 'block';                    document.getElementById('sfMiniToolbar-4c31d9').style.display = 'none';                }                Sfjs.renderAjaxRequests();                /* Handle toolbar-info position */                var toolbarBlocks = document.querySelectorAll('.sf-toolbar-block');                for (var i = 0; i < toolbarBlocks.length; i += 1) {                    toolbarBlocks[i].onmouseover = function () {                        var toolbarInfo = this.querySelectorAll('.sf-toolbar-info')[0];                        var pageWidth = document.body.clientWidth;                        var elementWidth = toolbarInfo.offsetWidth;                        var leftValue = (elementWidth + this.offsetLeft) - pageWidth;                        var rightValue = (elementWidth + (pageWidth - this.offsetLeft)) - pageWidth;                        /* Reset right and left value, useful on window resize */                        toolbarInfo.style.right = '';                        toolbarInfo.style.left = '';                        if (leftValue > 0 && rightValue > 0) {                            toolbarInfo.style.right = (rightValue * -1) + 'px';                        } else if (leftValue < 0) {                            toolbarInfo.style.left = 0;                        } else {                            toolbarInfo.style.right = '-1px';                        }                    };                }            },            function(xhr) {                if (xhr.status !== 0) {                    confirm('An error occurred while loading the web debug toolbar (' + xhr.status + ': ' + xhr.statusText + ').\n\nDo you want to open the profiler?') && (window.location = '/hesindia/web/app_dev.php/_profiler/4c31d9');                }            },            {'maxTries': 5}        );    })();/*]]>*/</script>
+<script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

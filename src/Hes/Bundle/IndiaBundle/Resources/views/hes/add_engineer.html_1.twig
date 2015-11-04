@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://pvwebco.com/ticketing_systems/add_ticket.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Add Engineer | Ticketing Software</title>
+
+    <!-- Styling -->
+    <!--<link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">-->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+    <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+
+<!-- MAIN PAGE CONTAINER -->
+<div class="boxed-container">
+
+{{ render( controller('HESIndiaBundle:Default:sessionHeaderTemplate' , { 'email' : email } ) ) }}
+
+<!-- MAIN TITLE -->
+<div class="main-title">
+    <div class="container">
+        <h1 class="main-title__primary" style="border-bottom: 1px solid #e1e1e1;">Add Engineer
+        </h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-3">
+
+            <div class="sidebar widget_nav_menu " style="margin-top: 23px;">
+                <ul class="menu" id="menu-services-menu">
+                    <li>
+                        <a href="{{ path('add_ticket') }}">TICKETS</a></li>
+                    <li>
+                        <a href="{{ path('add_ticket') }}">ENGINEERS</a></li>
+                    <li>
+                        <a href="{{ path('add_ticket') }}">REFERRALS</a></li>
+                </ul>
+            </div><!-- /.sidebar -->
+
+        </div><!-- /.col -->
+
+        <div class="col-xs-12 col-md-9">
+            <form style="margin-top: 22px;" action="{{ path('engineer_info') }}" method="POST">
+                <div class="col-xs-12  col-md-6">
+                    <div class="form-group">
+                        <input type="text" placeholder="Engineer Id" aria-invalid="false" aria-required="true" size="40" value="" name="engineer_id" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Engineer Name" id="datepicker" aria-invalid="false" aria-required="true" size="40" value="" name="engineer_name" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Engineer Email" aria-invalid="false" aria-required="true" size="40" value="" name="engineer_email" required="" >
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Designation" aria-invalid="false" aria-required="true" size="40" value="" name="designation" required="" >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Blood Group" aria-invalid="false" aria-required="true" size="40" value="" name="blood_group" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Mobile Number" aria-invalid="false" aria-required="true" size="40" value="" name="mobile_no" required="">
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                    <div class="form-group">
+                        <input type="text" placeholder="Date Of Joining" aria-invalid="false" aria-required="true" size="40" value="" name="doj" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Address1" aria-invalid="false" aria-required="true" size="40" value="" name="address1" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Address2" aria-invalid="false" aria-required="true" size="40" value="" name="address2" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="Pin Code" aria-invalid="false" aria-required="true" size="40" value="" name="pincode" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="City" aria-invalid="false" aria-required="true" size="40" value="" name="city" required="">
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" placeholder="State" aria-invalid="false" aria-required="true" size="40" value="" name="state" required="">
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6" style="margin-left: 0px;margin-right: 0px;">
+                    <input type="submit" style="margin-bottom: 10px;" class="btn btn-primary pull-left" value="Add Engineer">
+                </div>
+            </form>
+        </div>
+
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+
+</div><!-- /.boxed-container -->
+		
+    <script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

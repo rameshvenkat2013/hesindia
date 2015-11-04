@@ -1,0 +1,48 @@
+<div class="col-xs-12 col-md-3 col-md-pull-9">
+					
+					<div class="sidebar widget_nav_menu">
+						<ul class="menu" id="menu-services-menu">
+                                                      {% if link == 'aboutus' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'aboutus' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('about_us') }}">About Us</a>
+							</li>
+                                                        
+							{% if link == 'faq' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'faq' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('faq') }}">Frequently Asked Questions</a>
+							</li>
+                                                        
+							{% if link == 'privacy' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'privacy' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('privacy') }}">Privacy Policy</a>
+							</li>
+                                                        
+							{% if link == 'terms' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'terms' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('terms') }}">Terms &amp; Conditions</a>
+							</li>
+							
+                                                        {% if link == 'contact' %}
+							<li class="current-menu-item">
+                                                      {% elseif link != 'contact' %}
+							<li>
+                                                       {% endif%}
+								<a href="{{ path('contacttwo') }}">Contact Us</a>
+							</li>
+
+						</ul>
+					</div><!-- /.sidebar -->
+
+				</div><!-- /.col -->

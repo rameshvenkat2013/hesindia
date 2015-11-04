@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hes\Bundle\IndiaBundle\Entity\Faq" table="faq">
+    <id name="rowId" type="integer" column="row_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="question" type="string" column="question" length="200" nullable="false"/>
+    <field name="answer" type="string" column="answer" length="200" nullable="false"/>
+  </entity>
+</doctrine-mapping>

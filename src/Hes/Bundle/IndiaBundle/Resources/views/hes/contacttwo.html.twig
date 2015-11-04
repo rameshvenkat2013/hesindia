@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://pvwebco.com/ticketing_systems/storage.html -->
+<html lang="en" class=" js flexbox no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Contact Us | Hitech Electronic Services</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style_popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/hes/css/magnific-popup.css') }}">
+
+        <script src="{{ asset('bundles/hes/js/modernizr.custom.24530.js') }}"></script>
+        
+        {{ render( controller('HESIndiaBundle:Default:favicon' ) ) }}
+
+<style type="text/css" id="main-nav-css">@media (min-width: 1200px) { .header__container::before { bottom: 30px; } .header__container::after { bottom: 60px; } }</style></head>
+<body>
+	
+	<!-- MAIN PAGE CONTAINER -->
+	<div class="boxed-container">
+		
+		{{ render( controller('HESIndiaBundle:Default:headerTemplate' ) ) }}
+		
+		<!-- MAIN TITLE -->
+		<div class="main-title">
+			<div class="container">
+				<h1 class="main-title__primary">Contact Us</h1>
+			</div>
+		</div><!-- /.main-title -->
+		
+		<!-- BREADCRUMBS -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<span>
+					<a class="home" href="{{ path('hes_welcome-page') }}" title="Go to HomePage." rel="v:url">HOME</a>
+				</span>
+				<span>
+					<a class="home" href="#" title="Company Info" rel="v:url">Company Info</a>
+				</span>
+				<span>
+					<a class="home" href="{{ path('contacttwo') }}" title="Contact Us" rel="v:url">Contact Us</a>
+				</span>
+			</div>
+		</div><!-- /.breadcrumbs -->
+		
+		<div class="container">
+			
+			<div class="row">
+				
+				<main class="col-xs-12 col-md-9 col-md-push-3">
+					
+					<div class="row margin-bottom-30">
+						
+						<div class="col-sm-9">
+					
+					<h3 class="widget-title margin-top-0">
+						SEND US AN EMAIL, OR THREE
+					</h3>
+					
+					<p>
+						But i must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and i will give you a complete count of the system, and expound the actual things of the great explorer idea announcing.
+					</p>
+                                        
+					<form data-toggle="validator" method="post" action="{{ path('contact_store') }}" class="aSubmit" novalidate="true" >
+						<div style="display:none"><input type="text" name="maximus" value="" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;"></div>
+						<input type="hidden" name="theSubject" value="CargoPress: Contact Request">
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input type="text" placeholder="First Name*" aria-invalid="false" aria-required="true" size="40" value="{{field.fname|default('') }}" name="fname" required="">
+                                                                        <span class="error">{{error.fname.desc|default('')}}</span>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input type="text" placeholder="Last Name*" aria-invalid="false" aria-required="true" size="40" value="{{field.lname|default('') }}" name="lname" required="">
+                                                                        <span class="error">{{error.lname.desc|default('')}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input type="email" placeholder="E-mail address*" aria-invalid="false" aria-required="true" size="40" value="{{field.email|default('') }}" name="email" required="">
+                                                                        <span class="error">{{error.email.desc|default('')}}</span>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="form-group">
+									<input type="number" placeholder="Phone Number" aria-invalid="false" aria-required="true" size="40" value="{{field.phone|default('') }}" name="phone" required="">
+                                                                        <span class="error">{{error.phone.desc|default('')}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-8">
+								<div class="form-group">
+									<input type="text" placeholder="Subject*" aria-invalid="false" size="40" value="{{field.subject|default('') }}" name="subject" required="">
+                                                                        <span class="error">{{error.subject.desc|default('')}}</span>
+									<input type="hidden" size="40" value="contacttwo" name="contact">
+								</div>
+							</div>
+							<div class="col-xs-12">
+								<div class="form-group">
+									<textarea placeholder="Message*" aria-invalid="false" rows="10" cols="40" name="message" required="">{{field.message|default('') }}</textarea>
+                                                                        <span class="error">{{error.message.desc|default('')}}</span>
+								</div>
+								<input type="submit" class="btn btn-primary" value="SEND MESSAGE">
+								<img class="ajax-loader" id="loader" src="./contact_us_files/ajax-loader.gif" alt="Sending ..." style="display: none;">
+							</div>
+						</div>
+						<div class="response success">Your message was sent; we'll be in touch shortly!</div>
+						<div class="response error">Unfortunately, we could not sent your message right now. Please try again.</div>
+					</form>
+					
+				</div><!-- /.col -->
+						
+					</div><!-- /.row -->
+					
+				</main><!-- /.col -->
+				
+				{{ render( controller('HESIndiaBundle:Default:sidebarTemplate', { 'activelink' : 'contact'} ) ) }}
+				
+			</div><!-- /.row -->
+			
+		</div><!-- /.container -->
+		
+		{{ render( controller('HESIndiaBundle:Default:footerTemplate' ) ) }}
+		
+	</div><!-- /.boxed-container -->
+	
+    <script src="{{ asset('bundles/hes/js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/carousel.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/transition.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/button.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/collapse.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/validator.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/underscore.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/custom.js') }}"></script>
+    <script src="{{ asset('bundles/hes/js/jquery-ui.js') }}"></script>
+
+
+</body></html>
